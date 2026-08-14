@@ -1,12 +1,220 @@
 # Design Patch Log
 
-This log records meaningful rules, system, terminology, and balance changes. Prototype defaults may change frequently; core-rule changes should explain the reason and expected design impact.
+This log records meaningful rules, system, terminology, technical-direction, and balance changes. Prototype defaults may change frequently; core-rule changes should explain the reason and expected design impact.
 
 Version format follows semantic-style design versioning:
 
 - **MAJOR** — foundational redesign or compatibility-breaking rules overhaul
 - **MINOR** — new systems, mechanics, card families, classes, or substantial rule additions
-- **PATCH** — clarifications, balance changes, wording fixes, and narrow mechanical adjustments
+- **PATCH / interim milestone** — clarifications, technical direction, balance changes, wording fixes, and narrow mechanical adjustments
+
+---
+
+## v0.2.5 — Digital World & Multiplayer Direction — 2026-08-13
+
+### Product Direction
+
+- Reframed the project as a **third-person 3D PC action-RPG/deckbuilder** rather than a purely card/tabletop-style game.
+- Established narrative exploration, travel events, instanced dungeons, persistent host worlds, and online cooperative play as core digital-product goals.
+- Added the principle: **The deck defines capability; the player controls execution.**
+- Basic movement, positioning, aiming, traversal, dodging, and environmental interaction are direct 3D actions rather than card-driven movement.
+
+### Engine Direction
+
+- Selected **Unreal Engine 5** as the provisional engine choice pending technical prototype validation.
+- Established a hybrid architecture using C++ for authoritative gameplay/state systems and Blueprint/data-driven content for presentation and rapid content iteration.
+- Identified Unreal's Gameplay Ability System as a candidate execution layer for replicated card abilities, effects, tags, costs, statuses, and activation rules.
+
+### Added — Multiplayer Architecture
+
+- Established **1–6 players per world session** as the target multiplayer range.
+- Initial topology uses a **player-hosted listen server**.
+- The host acts as the authoritative simulation while also playing.
+- Architecture should remain compatible with a future dedicated-server mode.
+- Solo play remains first-class and should use the same authoritative gameplay rules path where practical.
+
+### Added — Ownership Model
+
+Established the persistence rule:
+
+**World persistence belongs to the host. Character persistence belongs to each player.**
+
+Host-owned state includes:
+
+- narrative decisions
+- faction outcomes
+- town upgrades
+- region unlocks
+- NPC state
+- host-world quests
+- world discoveries
+- persistent environmental consequences
+
+Player-owned state includes:
+
+- character progression
+- classes
+- skill mastery
+- cards
+- equipment
+- equipment mastery
+- treasures
+- titles
+- achievements
+- portable companion progression where allowed
+
+Joining another player's world does not overwrite the visitor's personal world state.
+
+### Added — Drop-In / Drop-Out Sessions
+
+- Added join-in-progress as a design goal.
+- Defined prototype safe join points: Town, Guild Hall, Camp, Dungeon Staging Area, and completed encounter boundaries.
+- Sensitive boss phases and narrative cinematics may temporarily restrict joining.
+- Secured personal progression should save at authoritative checkpoints.
+- Unsecured expedition rewards remain governed by extraction rules.
+
+### Added — Host Loss Policy
+
+- Seamless host migration is not required for the first implementation.
+- If the host leaves or the session is lost, the active world session ends.
+- Players keep already-secured progression.
+- Unsecured expedition state may revert to the latest valid checkpoint.
+- Future options include resumable session snapshots, elected-host migration, cloud hosting, and dedicated persistent worlds.
+
+### Added — Server Authority Rules
+
+Gameplay-critical state is server authoritative, including:
+
+- card zones and hand state
+- resources
+- damage/healing
+- statuses
+- inventory mutations
+- loot ownership
+- mastery gains
+- enemy state
+- dungeon objectives
+- narrative/world flags
+
+Clients request actions; the authority validates and executes them.
+
+### Added — Card-to-3D Ability Model
+
+Separated card data from executable 3D abilities.
+
+Cards define:
+
+- identity
+- class/source
+- tags
+- resource costs
+- targeting
+- range
+- timing
+- deck behavior
+- mastery/evolution links
+- ability reference
+
+Executable gameplay abilities define:
+
+- animation
+- movement commitment
+- targeting execution
+- projectiles/traces/areas
+- gameplay effects
+- replication
+- interrupts
+- combo windows
+- world interaction
+
+### Added — Real-Time Cooperative Combat Direction
+
+- Combat uses direct 3D movement with tactical restrictions created by the player's current hand/deck state.
+- Cross-player synergies are encouraged.
+- Standard content should not require strict MMO Tank/Healer/DPS compositions.
+- Encounter scaling across 1–6 players should use enemy composition, mechanics, reinforcement timing, hazards, and target pressure rather than relying primarily on HP multiplication.
+
+### Added — Narrative & Travel Integration
+
+- Persistent narrative state belongs to the host world.
+- Character builds may act as narrative keys through Origins, Classes, Skills, Equipment, Treasures, Titles, Guild Rank, Bestiary Knowledge, Companions, factions, and prior decisions.
+- Added travel events as active content including ambushes, weather, wounded travelers, monster tracks, faction patrols, shrines, caravans, companion scenes, rare merchants, anomalies, temporary dungeons, discoveries, and narrative choices.
+
+### Added — Instancing Strategy
+
+Preferred world structure:
+
+- persistent host-owned world state
+- explorable towns/hubs
+- overworld/travel regions
+- instanced dungeons
+- instanced major narrative encounters
+- maximum six-player party/session
+
+The project is explicitly **not dependent on MMO-scale persistent servers**.
+
+### Added — Save Data Boundaries
+
+Defined three persistence domains:
+
+- **Player-Owned Data** — character progression and portable possessions
+- **World-Owned Data** — host narrative/world state
+- **Session-Owned Data** — temporary run/combat state and unsecured loot
+
+Session data becomes persistent only when explicitly promoted through secure/extract/save rules.
+
+### Technical Risks to Prototype Early
+
+- six-player replicated combat
+- deck/hand synchronization under latency
+- join/rejoin state transfer
+- host save reliability
+- ability prediction and perceived latency
+- projectile/AoE replication
+- high enemy-count performance
+- multiplayer companion AI
+- dungeon instance transitions
+- world-state synchronization
+- secured/unsecured reward integrity
+- online-service choice such as Steam or EOS
+
+### New Technical Proof-of-Concept Target
+
+Before large-scale card/content production, build a small Unreal multiplayer test containing:
+
+- third-person movement
+- listen-server hosting
+- 1–6 player connectivity
+- one replicated enemy
+- one arena
+- five cards
+- replicated draw/hand/discard state
+- one melee Technique
+- one projectile Spell
+- one defensive Reaction
+- one status effect
+- one cross-player combo
+- one loot pickup
+- one extraction checkpoint
+- save/reload
+- join-in-progress
+
+Success condition: **3D action, card constraints, replication, persistence, and cooperative play feel coherent together.**
+
+### Open Technical Areas
+
+- combat pacing and possible solo time-slow/pause behavior
+- baseline dodge/block rules independent of cards
+- mouse/keyboard and controller targeting model
+- exact travel topology
+- Steam vs EOS vs alternative online layer
+- anti-cheat and character-save trust model for peer-hosted worlds
+- reconnect grace rules
+- whether companions consume the six-player party cap
+- visitor quest-reward transfer rules
+- cross-platform goals
+- mod-support goals
+- PvP is assumed out of scope unless deliberately added later
 
 ---
 
@@ -106,24 +314,6 @@ Early progression should emphasize danger, scarcity, learning, and meaningful pa
 - Equipment quality vocabulary: Common, Fine, Rare, Epic, Legendary, Mythic.
 - Guild Rank names are placeholders pending setting-specific terminology.
 
-### Next Target
-
-**v0.3.0 — Combat Prototype**
-
-Planned focus:
-
-- first 3 base classes
-- distinct class resources/mechanics
-- approximately 45 class cards
-- neutral starter cards
-- branching Skill Mastery examples
-- equipment families and evolutions
-- two companions and Support Decks
-- enemy families and Bestiary progression
-- elites and first boss
-- first Guild advancement test
-- complete short dungeon run with extraction and defeat consequences
-
 ---
 
 ## v0.1.0 — Foundation — 2026-08-13
@@ -175,16 +365,6 @@ Planned focus:
 - **Depth changes rules, not only numbers.**
 - **Discovery is progression.**
 - **Levels expand options; synergies create power.**
-
-### Known Open Areas
-
-- Final draw model.
-- Final Action economy.
-- Bleed, Poison, and Stagger implementation.
-- Exact defeat/extraction loss rules.
-- Final dungeon scaling formula.
-- Product format: physical, digital, or hybrid.
-- Solo/party/co-op structure.
 
 ---
 
