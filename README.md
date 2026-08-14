@@ -36,6 +36,7 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 - [`docs/WEAPON_ARTS_COMBAT_LAYERS.md`](docs/WEAPON_ARTS_COMBAT_LAYERS.md) — Foundation Actions, Weapon Arts, Codex Manifestations, weapon sets, five-slot hand, targeting families, and combat-tempo rules.
 - [`docs/FIRST_COMBAT_PACKAGE_GUARDIAN.md`](docs/FIRST_COMBAT_PACKAGE_GUARDIAN.md) — Guardian, Arming Sword & Shield, Resolve, Guard timing, Weapon Arts, starter manifestations, mastery, and equipment evolution.
 - [`docs/SECOND_COMBAT_PACKAGE_ARCANIST.md`](docs/SECOND_COMBAT_PACKAGE_ARCANIST.md) — Arcanist, Channeling Staff & Arcane Focus, Attunement, Sigils, ranged Weapon Arts, starter spells, mastery, and magical readability rules.
+- [`docs/THIRD_COMBAT_PACKAGE_DUELIST.md`](docs/THIRD_COMBAT_PACKAGE_DUELIST.md) — Duelist, Twin Blades, Flow, mobile Weapon Arts, starter manifestations, team-opening creation, mastery, and multiclass bridges.
 
 ### Character & Progression Systems
 
@@ -67,74 +68,97 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 
 ## Current design version
 
-**v0.2.15 — Arcanist Ranged/Magic Combat Package**
+**v0.2.16 — Duelist Mobile Melee Combat Package**
 
-The second fully specified prototype discipline is **Arcanist**, paired with **Channeling Staff & Arcane Focus**.
+The third fully specified prototype discipline is **Duelist**, paired with **Twin Blades**.
 
-Arcanist is a mobile ranged magical-control discipline built around aim, spatial setup, projectile shaping, compact Sigils, elemental/status interaction, and converting successful preparation into **Attunement**.
+Duelist fills the fast offensive melee role between Guardian and Arcanist. Its resource, **Flow**, is built through clean varied offensive rhythm: angle changes, successful close-range evasions, exploiting Exposed/Marked/Staggered states, and chaining different Weapon Arts without falling into repetitive spam.
 
-### Reliable Arcanist weapon package
+### Reliable Duelist weapon package
 
 Baseline actions:
 
-- **Arc Bolt** — quick aimable magical projectile.
-- **Focused Lance** — chargeable precision projectile with higher commitment and weak-point pressure.
-- **Focus Guard** — brief directional magical ward; useful against selected projectiles and magical bursts but intentionally less stable than Guardian's shield.
+- **Alternating Cuts** — fast paired-blade light chain.
+- **Cross Sever** — higher-commitment precision/stagger heavy attack.
+- **Deflect** — a narrow timing-based melee defense that is deliberately less stable than Guardian Guard.
 
 Reliable Weapon Arts:
 
-- **Sigil Cast** — place a compact magical anchor that can modify projectiles and be transformed by manifestations.
-- **Arc Step** — magical repositioning that interacts with nearby Sigils.
-- **Disrupting Pulse** — close-range interruption tool, especially useful against empowered or magical actions.
-- **Threaded Shot** — precision projectile that gains additional properties when fired through a Sigil.
+- **Passing Cut** — move past or alongside a target while striking, rewarding real angle changes.
+- **Rising Fang** — fast upward paired strike that punishes vulnerable enemies.
+- **Slipstep** — very short evasive footwork used to stay in offensive range rather than disengage.
+- **Reversal Cut** — attack while changing facing, with bonuses after Deflect or Slipstep.
 
-### Discipline mechanic — Attunement
+### Discipline mechanic — Flow
 
-Attunement is earned through successful magical sequencing rather than passive regeneration. Sources include threading attacks through Sigils, consuming prepared effects, exploiting weaknesses, and interrupting empowered magical actions.
+Flow rewards varied timing and positioning rather than attack speed. The prototype uses a small segmented meter, likely 0–4 segments, with gains reduced sharply when the player repeats the same low-risk action.
 
-Attunement can then strengthen higher-impact manifestations and magical Weapon Art interactions.
+Flow can be spent to extend pressure, reduce recovery on selected actions, or empower finishers.
 
-### First five Arcanist manifestations
+### First five Duelist manifestations
 
-1. **Ember Rune** — transforms a Sigil into a Fire property source that builds Burning.
-2. **Detonate Sigil** — consumes a prepared Sigil for a property-dependent area effect.
-3. **Mana Thread** — temporary stance that improves projectile/Sigil interaction.
-4. **Gravitic Snare** — compact control field that slows and draws lighter enemies inward.
-5. **Arc Lance** — Attunement-powered precision finisher that rewards Burning, Marked, Shocked, Frosted, Exposed, and other compatible setup states.
+1. **Pursuit** — empowers Passing Cut/Reversal Cut and interacts with Marked, Exposed, retreating enemies, and compatible Sigils.
+2. **Perfect Tempo → Tempo Break** — offensive same-slot transformation; varied Weapon Arts build Flow until the card becomes a multi-angle finisher.
+3. **Open Vein** — applies **Opened**, creating a team opportunity rather than only consuming one.
+4. **Echoing Steel** — reactive mobility attack triggered by Deflect, Slipstep, or nearby ally defensive/magical interruption events.
+5. **Sever the Moment** — Flow-powered finisher that changes payoff based on Exposed, Marked, Burning, Shocked, or Opened states.
 
-The key magic principle is:
+## Initial Three-Discipline Combat Triangle
 
-**Magic should shape the battlefield, not merely replace arrows with colored projectiles.**
-
-## Prototype Disciplines
-
-### Guardian
-
-**Arming Sword & Shield**
+### Guardian — Arming Sword & Shield
 
 **Read threat → Guard/Intercept/Interrupt → build Resolve → convert defense into counter-pressure.**
 
-Guardian tests active defense, physical protection, stagger, melee timing, same-slot card transformations, and frontline co-op support.
+Role emphasis: active defense, physical protection, stagger, space control.
 
-### Arcanist
-
-**Channeling Staff & Arcane Focus**
+### Arcanist — Channeling Staff & Arcane Focus
 
 **Position → place/shape Sigils → thread or control → build Attunement → convert setup into magical payoff.**
 
-Arcanist tests ranged aiming, ground targeting, magical spatial control, elemental/status interactions, controller placement ergonomics, and VFX readability.
+Role emphasis: ranged setup, battlefield geometry, magical control, status interaction.
 
-Neither discipline should require the other. Their shared status vocabulary should create optional co-op synergies.
+### Duelist — Twin Blades
+
+**Read opening → Slipstep/angle change → build Flow → create or exploit vulnerability → commit finisher → disengage before greed is punished.**
+
+Role emphasis: mobility, precision, opening creation/exploitation, offensive tempo.
+
+None of these disciplines should be mandatory. The purpose of the triangle is to prove that one shared Weapon Art + Active Codex architecture can support genuinely different playstyles.
+
+## First Multiclass Bridges
+
+Duelist establishes two obvious future hybrid paths without locking their final class names.
+
+### Guardian + Duelist
+
+Potential direction: **Vanguard / Blade Warden**
+
+- defensive counters that preserve Flow
+- aggressive interception
+- protection through disruption and positioning
+- Guard/Deflect transitions into movement attacks
+
+### Arcanist + Duelist
+
+Potential direction: **Spellblade**
+
+- Sigils imbue movement attacks
+- elemental blade states
+- Arc Step transitions into melee chains
+- Marked by Mana enables precision finishers
+- mana-threaded weapon arcs
+
+These remain future hybridization hooks rather than confirmed hidden classes.
 
 ## First Region
 
 The first shared region is **the Greyfen March**, centered on **Hearthcross**. The first dungeon is **The Buried Gate** and its first boss is the **Gatebound Hob**.
 
-Gatebound Hob now serves as a shared combat benchmark:
+Gatebound Hob now serves as the shared benchmark for all three prototype disciplines:
 
-- Guardian must distinguish blockable, interruptible, and dodge-required attacks.
-- Arcanist must maintain useful range, place Sigils under pressure, control adds/hazards, and avoid static casting.
-- Both disciplines can contribute to shared status and Exposed windows.
+- Guardian distinguishes blockable, interruptible, and dodge-required attacks.
+- Arcanist maintains range, shapes Sigils, controls pressure, and avoids static casting.
+- Duelist changes angles, preserves melee pressure, exploits recovery windows, and learns when Deflect is insufficient.
 
 After the boss, the party reaches the true Buried Gate and receives the first shared Story Revelation:
 
@@ -149,7 +173,7 @@ Origin and Background are separate concepts:
 
 The first two complete opening paths are **The Stranded** and **The Invited**. Both converge on Hearthcross while retaining different Skills, social circumstances, perception lenses, and narrative flags.
 
-Both Guardian and Arcanist can be discovered organically or through formal instruction depending on Origin and Background.
+Guardian, Arcanist, and Duelist can each be discovered organically or through formal instruction depending on Origin, Background, and behavior.
 
 ## Combat Architecture
 
@@ -195,26 +219,24 @@ A host loads their timeline and up to five visitors join with their own characte
 
 **Vulnerable Adventurer → Competent Specialist → Synergy-Driven Veteran → System-Breaking Legendary Build**
 
-## Next prototype target — Guardian + Arcanist in the Buried Gate
+## Next prototype target — Three Disciplines in the Buried Gate
 
-Validate both combat extremes against the same content:
+Validate the initial combat triangle against the same content:
 
-- Sword/Shield active defense and Staff/Focus ranged magic before Codex access
-- Guardian Resolve and Arcanist Attunement
-- Weak/Solid/Perfect Guard timing
-- aimable Arc Bolt and Focused Lance
-- Sigil placement and Threaded Shot geometry
-- five-slot Active Codex hands
-- Brace → Perfect Guard transformation
-- Ember Rune → Detonate Sigil setup/payoff
-- Gravitic Snare crowd-control readability
-- Guardian/Arcanist cross-status synergy
-- Gatebound Hob under solo and co-op pressure
-- **Gatewarden Shield** and **Gate-Echo Staff** equipment evolution hooks
-- keyboard/mouse and controller targeting
-- magical VFX readability at 1–6 players
+- Guardian Resolve, Arcanist Attunement, and Duelist Flow
+- Sword/Shield, Staff/Focus, and Twin Blades baseline combat before Codex access
+- Guard, Focus Guard, Deflect, Slipstep, and universal dodge having clearly different jobs
+- five-slot Active Codex hands for all three disciplines
+- same-slot transformations on Guardian and Duelist
+- Sigil geometry and ground targeting
+- angle-changing melee under keyboard/mouse and controller input
+- shared states: Exposed, Staggered, Burning, Marked by Mana, Shocked, Frosted, and Opened
+- Guardian → Duelist, Arcanist → Duelist, and three-way synergy sequences
+- Gatebound Hob under solo and mixed-party pressure
+- **Gatewarden Shield**, **Gate-Echo Staff**, and **Gate-Split Blades** equipment evolution hooks
+- 1–6 player combat readability
 
-The next combat-content decision should add a **third discipline with a different movement/resource profile**, giving the prototype a three-point comparison rather than two variations on the same pattern.
+If these three packages all feel strong alone and create optional synergies together, the next major combat-design step should shift from isolated class kits to **multiclass rules, deck construction, and hybrid manifestations**.
 
 ## License
 
