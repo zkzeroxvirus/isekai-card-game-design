@@ -1,30 +1,32 @@
 # Isekai Card Game Design
 
-Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** built around customizable characters, weapon-driven combat, a soul-bound Divine Codex, Skills, modular disciplines, equipment mastery, living-world consequences, narrative discovery, infinitely scaling dungeons, town progression, and 1–6 player online co-op.
+Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** built around customizable characters, weapon-driven combat, a soul-bound Divine Codex, Skills, modular disciplines, Jobs, hidden progression, equipment mastery, living-world consequences, narrative discovery, infinitely scaling dungeons, town progression, and 1–6 player online co-op.
 
 ## Design pillars
 
-1. **Build a character, not just a deck.** Cards are exceptional manifestations inside a larger build made from Skills, weapons, disciplines, equipment, mastery, titles, knowledge, relationships, and world history.
+1. **Build a character, not just a deck.** Cards are exceptional manifestations inside a larger build made from Origin, Background, Skills, Jobs, weapons, disciplines, equipment, mastery, titles, knowledge, relationships, and world history.
 2. **The deck defines capability; the player controls execution.** Movement, positioning, aiming, traversal, dodging, and interaction happen directly in 3D space.
 3. **Weapons determine how you fight. Cards determine what extraordinary options you can manifest while fighting.**
 4. **Cards are manifestations of the soul.** The Active Codex represents permitted interactions with the laws of the world.
 5. **Origins change both history and perception.** Arrival method, Background, Skills, divine involvement, combat experience, and System Comprehension can alter onboarding and narrative access.
 6. **Skills are broader than cards.** Skills affect combat, crafting, survival, exploration, social interaction, class qualification, and perception.
-7. **The world remembers.** Time passes, factions act, settlements change, and consequences can return much later.
-8. **Morality emerges from behavior.** Heroic, villainous, pragmatic, revolutionary, tyrannical, and mixed paths are supported without a single Good/Evil meter.
-9. **The story is discovered, not merely followed.** The Core Mystery advances through Story Revelations, exploration, factions, companions, and world state.
-10. **Visual progression mirrors character progression.** The world begins grounded and becomes increasingly supernatural as power rises.
-11. **Classes are modular disciplines.** Characters qualify for and combine disciplines rather than being permanently locked into one identity.
-12. **Mastery changes abilities.** Skills and equipment branch and evolve through meaningful use, training, accomplishments, and discoveries.
-13. **Magic should shape the battlefield, not merely replace arrows with colored projectiles.** Ranged magic should use positioning, geometry, preparation, statuses, and spatial control.
-14. **Depth changes rules, not only numbers.** Infinite dungeon scaling uses enemy affixes, hazards, mutations, and Dungeon Laws alongside controlled stat growth.
-15. **Discovery is progression.** Hidden classes, titles, equipment evolutions, recipes, divine permissions, system information, and dungeon phenomena reward experimentation.
-16. **Knowledge is power.** Bestiary research and System Comprehension eventually expose deeper world rules.
-17. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without deleting developed characters.
-18. **Multiplayer should feel like visiting another adventurer's world.** World persistence belongs to the host; character persistence belongs to each player.
-19. **The power curve escalates dramatically.** Vulnerable outsider becomes a specialized veteran and eventually a system-breaking legendary build.
-20. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper infrastructure behind the Divine Codex and Transference.
-21. **Isekai progression fantasy is the tone.** The player gradually learns, masters, and eventually exploits the hidden rules of a new fantasy world.
+7. **Jobs describe recognized roles; Disciplines describe combat frameworks.** Jobs provide effects, Skills, permissions, social recognition, and qualification routes without becoming alternate combat bars.
+8. **Visible progression tells the player what they can pursue. Hidden progression rewards the person they accidentally became.**
+9. **The world remembers.** Time passes, factions act, settlements change, and consequences can return much later.
+10. **Morality emerges from behavior.** Heroic, villainous, pragmatic, revolutionary, tyrannical, and mixed paths are supported without a single Good/Evil meter.
+11. **The story is discovered, not merely followed.** The Core Mystery advances through Story Revelations, exploration, factions, companions, and world state.
+12. **Visual progression mirrors character progression.** The world begins grounded and becomes increasingly supernatural as power rises.
+13. **Classes are modular disciplines.** Characters qualify for and combine disciplines rather than being permanently locked into one identity.
+14. **Mastery changes abilities.** Skills and equipment branch and evolve through meaningful use, training, accomplishments, and discoveries.
+15. **Magic should shape the battlefield, not merely replace arrows with colored projectiles.** Ranged magic should use positioning, geometry, preparation, statuses, and spatial control.
+16. **Depth changes rules, not only numbers.** Infinite dungeon scaling uses enemy affixes, hazards, mutations, and Dungeon Laws alongside controlled stat growth.
+17. **Discovery is progression.** Hidden Jobs, hidden Disciplines, titles, equipment evolutions, recipes, divine permissions, system information, and dungeon phenomena reward experimentation.
+18. **Knowledge is power.** Bestiary research and System Comprehension eventually expose deeper world rules and hidden qualification information.
+19. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without deleting developed characters.
+20. **Multiplayer should feel like visiting another adventurer's world.** World persistence belongs to the host; character persistence belongs to each player.
+21. **The power curve escalates dramatically.** Vulnerable outsider becomes a specialized veteran and eventually a system-breaking legendary build.
+22. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper infrastructure behind the Divine Codex and Transference.
+23. **Isekai progression fantasy is the tone.** The player gradually learns, masters, and eventually exploits the hidden rules of a new fantasy world.
 
 ## Repository map
 
@@ -42,6 +44,7 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 
 - [`docs/ORIGINS_SKILLS_SYSTEM_PERCEPTION.md`](docs/ORIGINS_SKILLS_SYSTEM_PERCEPTION.md) — multiple Origin paths, the Threshold, Skills, System Comprehension, perception lenses, starting vulnerability, and gradual Codex discovery.
 - [`docs/STARTING_ORIGINS_AND_OPENINGS.md`](docs/STARTING_ORIGINS_AND_OPENINGS.md) — playable Origin set, Background layer, Threshold scenes, adaptive first manifestations, and opening convergence.
+- [`docs/JOBS_MULTICLASS_AND_HIDDEN_PROGRESSION.md`](docs/JOBS_MULTICLASS_AND_HIDDEN_PROGRESSION.md) — Jobs, Active Job slots, hidden qualifications, System Comprehension visibility tiers, Discipline multiclassing, Hybrid Manifestations, mutual exclusivity, and endgame classification drift.
 - [`docs/PROGRESSION.md`](docs/PROGRESSION.md) — master progression model and long-term power arc.
 - [`docs/SKILL_MASTERY.md`](docs/SKILL_MASTERY.md) — persistent skill use, mastery tiers, branching upgrades, and hidden evolutions.
 - [`docs/EQUIPMENT_PROGRESSION.md`](docs/EQUIPMENT_PROGRESSION.md) — equipment mastery, learned techniques, affixes, crafting, and item evolution.
@@ -68,40 +71,103 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 
 ## Current design version
 
-**v0.2.16 — Duelist Mobile Melee Combat Package**
+**v0.2.17 — Jobs, Multiclassing & Hidden Progression**
 
-The third fully specified prototype discipline is **Duelist**, paired with **Twin Blades**.
+The character-build architecture now formally separates **Jobs** from combat **Disciplines**.
 
-Duelist fills the fast offensive melee role between Guardian and Arcanist. Its resource, **Flow**, is built through clean varied offensive rhythm: angle changes, successful close-range evasions, exploiting Exposed/Marked/Staggered states, and chaining different Weapon Arts without falling into repetitive spam.
+A Discipline primarily answers **how you fight**. A Job answers **what role or identity the world/system has recognized you as fulfilling**.
 
-### Reliable Duelist weapon package
+Jobs can provide:
 
-Baseline actions:
+- contextual passive effects
+- Job-specific Skills
+- crafting/exploration/social permissions
+- faction and NPC recognition
+- advanced and hidden Job evolution routes
 
-- **Alternating Cuts** — fast paired-blade light chain.
-- **Cross Sever** — higher-commitment precision/stagger heavy attack.
-- **Deflect** — a narrow timing-based melee defense that is deliberately less stable than Guardian Guard.
+Characters may know many Jobs but only attune a limited number as **Active Jobs** at full strength. The prototype begins with **one Active Job slot**, with additional slots becoming possible later through progression and eventually through unusual Codex manipulation.
 
-Reliable Weapon Arts:
+## Hidden Progression
 
-- **Passing Cut** — move past or alongside a target while striking, rewarding real angle changes.
-- **Rising Fang** — fast upward paired strike that punishes vulnerable enemies.
-- **Slipstep** — very short evasive footwork used to stay in offensive range rather than disengage.
-- **Reversal Cut** — attack while changing facing, with bonuses after Deflect or Slipstep.
+Hidden progression is now a foundational reward structure.
 
-### Discipline mechanic — Flow
+The core rule is:
 
-Flow rewards varied timing and positioning rather than attack speed. The prototype uses a small segmented meter, likely 0–4 segments, with gains reduced sharply when the player repeats the same low-risk action.
+**The world tracks what you repeatedly prove about yourself. The Codex eventually gives that pattern a name.**
 
-Flow can be spent to extend pressure, reduce recovery on selected actions, or empower finishers.
+Hidden qualifications can depend on:
 
-### First five Duelist manifestations
+- behavior
+- mastery
+- narrative choices
+- world state
+- equipment history
+- failure/survival
+- unusual combinations
+- negative conditions: things the player deliberately refused or never did
 
-1. **Pursuit** — empowers Passing Cut/Reversal Cut and interacts with Marked, Exposed, retreating enemies, and compatible Sigils.
-2. **Perfect Tempo → Tempo Break** — offensive same-slot transformation; varied Weapon Arts build Flow until the card becomes a multi-angle finisher.
-3. **Open Vein** — applies **Opened**, creating a team opportunity rather than only consuming one.
-4. **Echoing Steel** — reactive mobility attack triggered by Deflect, Slipstep, or nearby ally defensive/magical interruption events.
-5. **Sever the Moment** — Flow-powered finisher that changes payoff based on Exposed, Marked, Burning, Shocked, or Opened states.
+Some paths are mutually exclusive so character history creates real commitments rather than every character becoming the same completion checklist.
+
+System Comprehension controls how much of these qualifications can be seen, ranging from vague `Unknown Qualification Progressed` feedback to exact hidden requirements at exceptional comprehension.
+
+## Multiclassing
+
+Prototype multiclassing remains **Primary + Secondary Discipline**, but both Disciplines should materially shape the build.
+
+Multiclassing can change:
+
+- manifestation access
+- Weapon Art modifications
+- resource interactions
+- Skill qualification routes
+- hidden Job/Discipline access
+- narrative identity
+- Hybrid Manifestations
+
+It should create integrated identities rather than simply adding more unrelated cards.
+
+### First hybrid bridges
+
+**Guardian + Duelist** — Blade Warden / Vanguard direction
+
+- defensive counters preserve Flow
+- Intercept can transition into movement attacks
+- protection through aggressive disruption
+
+**Arcanist + Duelist** — Spellblade direction
+
+- Sigils imbue movement attacks
+- elemental blade states
+- Arc Step connects into melee chains
+
+**Guardian + Arcanist** — Runic Bastion / Arcane Warden direction
+
+- physical Guard interacts with magical wards
+- Intercept can create defensive Sigils
+- magical attacks can be converted into stored protective charge
+
+These names remain provisional. The important system is the hybrid-recognition framework.
+
+## Jobs as Build Modifiers
+
+Jobs can reshape multiclass identity without becoming universal mandatory recipes.
+
+Examples:
+
+- Guardian + Priest → sacred/oath protection paths
+- Duelist + Assassin → execution/stealth paths
+- Arcanist + Scholar → deeper magical analysis
+- Arcanist + Blacksmith → runic equipment and Runesmith-style progression
+- Guardian + Arcanist + Blacksmith → possible Runic Bastion hidden qualification
+- Duelist + Arcanist + Hunter → possible Arcane Stalker hidden qualification
+
+## Endgame Classification Drift
+
+Job identity becomes increasingly conceptual as the character grows.
+
+**Hunter / Blacksmith / Soldier → Monster Tamer / Runeforger / Relic Seeker → Dragonslayer / Saint / Heretic / Tyrant → Gatekeeper / Worldwalker / Godslayer / Lawbreaker**
+
+At extreme progression the Codex may no longer be describing a profession. It may be classifying what the character has become, creating a natural bridge into Titles and Authorities.
 
 ## Initial Three-Discipline Combat Triangle
 
@@ -109,71 +175,30 @@ Flow can be spent to extend pressure, reduce recovery on selected actions, or em
 
 **Read threat → Guard/Intercept/Interrupt → build Resolve → convert defense into counter-pressure.**
 
-Role emphasis: active defense, physical protection, stagger, space control.
-
 ### Arcanist — Channeling Staff & Arcane Focus
 
 **Position → place/shape Sigils → thread or control → build Attunement → convert setup into magical payoff.**
-
-Role emphasis: ranged setup, battlefield geometry, magical control, status interaction.
 
 ### Duelist — Twin Blades
 
 **Read opening → Slipstep/angle change → build Flow → create or exploit vulnerability → commit finisher → disengage before greed is punished.**
 
-Role emphasis: mobility, precision, opening creation/exploitation, offensive tempo.
-
-None of these disciplines should be mandatory. The purpose of the triangle is to prove that one shared Weapon Art + Active Codex architecture can support genuinely different playstyles.
-
-## First Multiclass Bridges
-
-Duelist establishes two obvious future hybrid paths without locking their final class names.
-
-### Guardian + Duelist
-
-Potential direction: **Vanguard / Blade Warden**
-
-- defensive counters that preserve Flow
-- aggressive interception
-- protection through disruption and positioning
-- Guard/Deflect transitions into movement attacks
-
-### Arcanist + Duelist
-
-Potential direction: **Spellblade**
-
-- Sigils imbue movement attacks
-- elemental blade states
-- Arc Step transitions into melee chains
-- Marked by Mana enables precision finishers
-- mana-threaded weapon arcs
-
-These remain future hybridization hooks rather than confirmed hidden classes.
-
 ## First Region
 
-The first shared region is **the Greyfen March**, centered on **Hearthcross**. The first dungeon is **The Buried Gate** and its first boss is the **Gatebound Hob**.
+The first shared region remains **the Greyfen March**, centered on **Hearthcross**. The first dungeon is **The Buried Gate**, whose first boss is the **Gatebound Hob**.
 
-Gatebound Hob now serves as the shared benchmark for all three prototype disciplines:
-
-- Guardian distinguishes blockable, interruptible, and dodge-required attacks.
-- Arcanist maintains range, shapes Sigils, controls pressure, and avoids static casting.
-- Duelist changes angles, preserves melee pressure, exploits recovery windows, and learns when Deflect is insufficient.
-
-After the boss, the party reaches the true Buried Gate and receives the first shared Story Revelation:
-
-**The Gate recognizes the party in some way, but does not fully open.**
+Hearthcross is now also the first place to test Jobs socially and institutionally. A Hunter, Blacksmith, Scholar, Priest, Smuggler, or other active Job should be able to produce different interactions even when the characters share the same combat Discipline.
 
 ## Origins & Opening Experience
 
-Origin and Background are separate concepts:
+Origin and Background remain separate:
 
 - **Origin:** how did you enter this world?
 - **Background:** who were you before that happened?
 
 The first two complete opening paths are **The Stranded** and **The Invited**. Both converge on Hearthcross while retaining different Skills, social circumstances, perception lenses, and narrative flags.
 
-Guardian, Arcanist, and Duelist can each be discovered organically or through formal instruction depending on Origin, Background, and behavior.
+Otherworlders may eventually prove unusually flexible at perceiving, retaining, swapping, and combining Job Imprints through the Divine Codex, but native characters remain capable of deep mastery and rare culturally specific progression.
 
 ## Combat Architecture
 
@@ -213,30 +238,32 @@ Faction reputation is organization-specific, and morality emerges through persis
 
 **World persistence belongs to the host. Character persistence belongs to each player.**
 
-A host loads their timeline and up to five visitors join with their own characters. Visitors retain Origin, Skills, perception lens, progression, and secured rewards.
+A host loads their timeline and up to five visitors join with their own characters. Visitors retain Origin, Skills, Jobs, perception lens, progression, and secured rewards.
 
 ## Power Curve
 
 **Vulnerable Adventurer → Competent Specialist → Synergy-Driven Veteran → System-Breaking Legendary Build**
 
-## Next prototype target — Three Disciplines in the Buried Gate
+## Next prototype target — Jobs + Multiclass Discovery in Hearthcross
 
-Validate the initial combat triangle against the same content:
+Validate:
 
-- Guardian Resolve, Arcanist Attunement, and Duelist Flow
-- Sword/Shield, Staff/Focus, and Twin Blades baseline combat before Codex access
-- Guard, Focus Guard, Deflect, Slipstep, and universal dodge having clearly different jobs
-- five-slot Active Codex hands for all three disciplines
-- same-slot transformations on Guardian and Duelist
-- Sigil geometry and ground targeting
-- angle-changing melee under keyboard/mouse and controller input
-- shared states: Exposed, Staggered, Burning, Marked by Mana, Shocked, Frosted, and Opened
-- Guardian → Duelist, Arcanist → Duelist, and three-way synergy sequences
-- Gatebound Hob under solo and mixed-party pressure
-- **Gatewarden Shield**, **Gate-Echo Staff**, and **Gate-Split Blades** equipment evolution hooks
-- 1–6 player combat readability
+- Primary + Secondary Discipline
+- one Active Job slot
+- at least four ordinary Jobs
+- at least one hidden Job
+- one hidden Skill or manifestation
+- Guardian + Duelist hybrid manifestation
+- Arcanist + Duelist hybrid manifestation
+- Guardian + Arcanist hybrid manifestation
+- System Comprehension hiding/revealing qualification progress
+- one mutually exclusive hidden path
+- one qualification driven partly by negative conditions
+- one Hearthcross interaction changed by active Job
+- one Job-modified equipment evolution route
+- solo and co-op builds using different combinations without one obvious best recipe
 
-If these three packages all feel strong alone and create optional synergies together, the next major combat-design step should shift from isolated class kits to **multiclass rules, deck construction, and hybrid manifestations**.
+The goal is to prove that **multiclassing, Jobs, hidden progression, narrative identity, and hybrid manifestations create genuinely different characters from the same underlying combat systems**.
 
 ## License
 
