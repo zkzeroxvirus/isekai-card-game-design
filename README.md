@@ -1,23 +1,25 @@
 # Isekai Card Game Design
 
-Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** built around customizable characters, multiclass card pools, skill and equipment mastery, narrative exploration, infinitely scaling dungeon runs, persistent town development, companions, achievements, legendary treasures, and 1–6 player online co-op.
+Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** built around customizable characters, multiclass card pools, skill and equipment mastery, narrative exploration, a persistent living world, infinitely scaling dungeon runs, town development, companions, achievements, legendary treasures, and 1–6 player online co-op.
 
 ## Design pillars
 
 1. **Build a character, not just a deck.** Cards represent learned techniques, spells, reactions, equipment actions, summons, and other character capabilities.
 2. **The deck defines capability; the player controls execution.** Movement, positioning, aiming, traversal, dodging, and environmental interaction happen directly in 3D space; cards determine which abilities are available.
 3. **Cards are manifestations of the soul.** The card interface represents the character's permitted interactions with the laws of the world through a soul-bound Active Codex.
-4. **Classes are modular disciplines.** Characters combine class card pools rather than being permanently locked into one class identity.
-5. **Mastery changes abilities.** Skills and equipment can improve, branch, and evolve through use, training, accomplishments, and discoveries.
-6. **Runs create temporary power; the world creates permanent possibility.** Dungeon upgrades reset, while mastery, treasures, achievements, town systems, companions, knowledge, and discoveries persist.
-7. **Depth changes rules, not only numbers.** Infinite dungeon scaling adds affixes, hazards, mutations, and Dungeon Laws alongside controlled numerical scaling.
-8. **Discovery is progression.** Hidden classes, hybrid cards, titles, achievements, equipment evolutions, recipes, divine permissions, and dungeon phenomena reward experimentation.
-9. **Knowledge is power.** Bestiary research and world knowledge reveal enemy behavior, weaknesses, loot, recipes, hidden interactions, and eventually the true nature of game systems.
-10. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without erasing developed characters.
-11. **Multiplayer should feel like visiting another adventurer's world.** World persistence belongs to the host; persistent characters belong to individual players.
-12. **The power curve escalates dramatically.** The intended arc moves from vulnerable adventurer to specialized veteran to legendary system-breaking build.
-13. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper metaphysical infrastructure behind the Divine Codex and Transference.
-14. **Isekai progression fantasy is the tone.** The player should feel as though they are learning and eventually exploiting the hidden rules of a new fantasy world.
+4. **The world remembers.** Time passes, factions act, settlements change, and consequences can return much later in the campaign.
+5. **Morality emerges from behavior.** The game supports heroic, villainous, pragmatic, revolutionary, tyrannical, and mixed paths without reducing them to one Good/Evil meter.
+6. **Classes are modular disciplines.** Characters combine class card pools rather than being permanently locked into one class identity.
+7. **Mastery changes abilities.** Skills and equipment can improve, branch, and evolve through use, training, accomplishments, and discoveries.
+8. **Runs create temporary power; the world creates permanent possibility.** Dungeon upgrades reset, while mastery, treasures, achievements, town systems, companions, knowledge, relationships, and discoveries persist.
+9. **Depth changes rules, not only numbers.** Infinite dungeon scaling adds affixes, hazards, mutations, and Dungeon Laws alongside controlled numerical scaling.
+10. **Discovery is progression.** Hidden classes, hybrid cards, titles, achievements, equipment evolutions, recipes, divine permissions, and dungeon phenomena reward experimentation.
+11. **Knowledge is power.** Bestiary research and world knowledge reveal enemy behavior, weaknesses, loot, recipes, hidden interactions, and eventually the true nature of game systems.
+12. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without erasing developed characters.
+13. **Multiplayer should feel like visiting another adventurer's world.** World persistence and timeline belong to the host; persistent characters belong to individual players.
+14. **The power curve escalates dramatically.** The intended arc moves from vulnerable adventurer to specialized veteran to legendary system-breaking build.
+15. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper metaphysical infrastructure behind the Divine Codex and Transference.
+16. **Isekai progression fantasy is the tone.** The player should feel as though they are learning and eventually exploiting the hidden rules of a new fantasy world.
 
 ## Repository map
 
@@ -39,6 +41,7 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 ### Lore & World Systems
 
 - [`docs/DIVINE_CODEX_LORE.md`](docs/DIVINE_CODEX_LORE.md) — Divine Codex, Transference, soul manifestations, gods, Authorities, native/otherworlder perception, and the central metaphysical mystery.
+- [`docs/LIVING_WORLD.md`](docs/LIVING_WORLD.md) — world time, faction reputation, behavioral tendencies, consequence records, faction projects, evolving settlements, world eras, and hero/villain paths.
 - [`docs/DUNGEONS.md`](docs/DUNGEONS.md) — dungeon generation and infinite depth framework.
 - [`docs/TOWN.md`](docs/TOWN.md) — persistent town and building progression framework.
 
@@ -51,17 +54,27 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 
 ## Current design version
 
-**v0.2.6 — Divine Codex & Isekai Lore Framework**
+**v0.2.7 — Living World, Factions & Consequences**
 
-The card system is now canonically integrated into the setting. Cards are normally non-physical **soul manifestations**, and the equipped deck represents the character's **Active Codex**: the subset of known abilities attuned for reliable manifestation.
+The persistent host world is now formally treated as its own progression system. Meaningful actions advance time, factions pursue projects, settlements can develop or decline, companions remember behavior, and important decisions can create delayed consequences.
 
-Otherworlders may perceive this supernatural system as an explicit game-like interface because the Transference translates metaphysical rules into concepts their minds can understand. Native inhabitants participate in the same underlying system without necessarily perceiving literal cards.
+Faction reputation is independent by organization rather than collapsed into a global morality score. Hidden behavioral tendencies may track patterns such as Mercy/Ruthlessness, Order/Freedom, Selflessness/Ambition, and Sacred/Profane, but choices must have tangible consequences rather than existing to fill meters.
 
-The gods can influence and interact with the system but are **not confirmed to have created it**. The Divine Codex, cross-world Transference, Dungeon Laws, Authorities, and Endless Dungeon are now part of a shared long-form mystery.
+Heroic, villainous, pragmatic, revolutionary, tyrannical, and mixed-character routes are all supported. Villainous play is intended to unlock distinct content rather than act as a reduced-content failure path.
+
+The host's timeline defines multiplayer world reality. Visiting another player can therefore expose dramatically different versions of familiar towns, NPCs, factions, wars, and alliances.
 
 **Unreal Engine 5** remains the provisional engine choice pending a small networking/combat validation prototype.
 
-Numerical values marked **Prototype Default** remain testing assumptions rather than locked balance targets.
+## Living World Principle
+
+**The world remembers what the player did, who benefited, who suffered, and how much time has passed.**
+
+Long-form influence can escalate through provisional eras:
+
+**Arrival → Adventurer → Heroic → Sovereign → Mythic**
+
+The scale of consequence should grow alongside the character: from individual lives and villages to nations, gods, Authorities, and eventually world rules.
 
 ## Central Lore Mystery
 
@@ -75,7 +88,7 @@ Mechanics should increasingly become lore as the player gains knowledge.
 
 **World persistence belongs to the host. Character persistence belongs to each player.**
 
-A host loads their persistent world and up to five other players may join with their own characters. Visiting players participate in the host's narrative and dungeon state without replacing their own world state. Secured character rewards and personal progression travel back with them.
+A host loads their persistent timeline and up to five other players may join with their own characters. Visitors participate in the host's current narrative reality without replacing their own world state. Secured character rewards and personal progression travel back with them.
 
 Initial multiplayer uses player-hosted listen servers. The architecture should remain compatible with dedicated servers later.
 
@@ -85,7 +98,7 @@ The intended long-form character fantasy is:
 
 **Vulnerable Adventurer → Competent Specialist → Synergy-Driven Veteran → System-Breaking Legendary Build**
 
-Early enemies should be dangerous and resources meaningful. Midgame should open multiclassing, equipment evolution, crafting, companions, and increasingly elaborate engines. Endgame should reward extreme specialization, rare classes, legendary equipment, treasures, summons, unusual interactions, Authorities, and mastery of hidden systems.
+Early enemies should be dangerous and resources meaningful. Midgame should open multiclassing, equipment evolution, crafting, companions, faction influence, and increasingly elaborate engines. Endgame should reward extreme specialization, rare classes, legendary equipment, treasures, summons, political influence, unusual interactions, Authorities, and mastery of hidden systems.
 
 ## Design status labels
 
