@@ -16,24 +16,26 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 10. **Visual progression mirrors character progression.** The world begins grounded and becomes increasingly supernatural as power rises.
 11. **Classes are modular disciplines.** Characters qualify for and combine disciplines rather than being permanently locked into one identity.
 12. **Mastery changes abilities.** Skills and equipment branch and evolve through meaningful use, training, accomplishments, and discoveries.
-13. **Depth changes rules, not only numbers.** Infinite dungeon scaling uses enemy affixes, hazards, mutations, and Dungeon Laws alongside controlled stat growth.
-14. **Discovery is progression.** Hidden classes, titles, equipment evolutions, recipes, divine permissions, system information, and dungeon phenomena reward experimentation.
-15. **Knowledge is power.** Bestiary research and System Comprehension eventually expose deeper world rules.
-16. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without deleting developed characters.
-17. **Multiplayer should feel like visiting another adventurer's world.** World persistence belongs to the host; character persistence belongs to each player.
-18. **The power curve escalates dramatically.** Vulnerable outsider becomes a specialized veteran and eventually a system-breaking legendary build.
-19. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper infrastructure behind the Divine Codex and Transference.
-20. **Isekai progression fantasy is the tone.** The player gradually learns, masters, and eventually exploits the hidden rules of a new fantasy world.
+13. **Magic should shape the battlefield, not merely replace arrows with colored projectiles.** Ranged magic should use positioning, geometry, preparation, statuses, and spatial control.
+14. **Depth changes rules, not only numbers.** Infinite dungeon scaling uses enemy affixes, hazards, mutations, and Dungeon Laws alongside controlled stat growth.
+15. **Discovery is progression.** Hidden classes, titles, equipment evolutions, recipes, divine permissions, system information, and dungeon phenomena reward experimentation.
+16. **Knowledge is power.** Bestiary research and System Comprehension eventually expose deeper world rules.
+17. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without deleting developed characters.
+18. **Multiplayer should feel like visiting another adventurer's world.** World persistence belongs to the host; character persistence belongs to each player.
+19. **The power curve escalates dramatically.** Vulnerable outsider becomes a specialized veteran and eventually a system-breaking legendary build.
+20. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper infrastructure behind the Divine Codex and Transference.
+21. **Isekai progression fantasy is the tone.** The player gradually learns, masters, and eventually exploits the hidden rules of a new fantasy world.
 
 ## Repository map
 
-### Core Rules
+### Core Rules & Combat
 
 - [`docs/RULES_FRAMEWORK.md`](docs/RULES_FRAMEWORK.md) — core loop, character construction, combat, deck construction, party structure, run flow, and rules hierarchy.
 - [`docs/CARD_CATEGORIES.md`](docs/CARD_CATEGORIES.md) — card taxonomy, anatomy, rarity, sources, tags, and upgrade structure.
 - [`docs/MECHANICS.md`](docs/MECHANICS.md) — resources, damage, defense, statuses, keywords, triggers, and timing language.
 - [`docs/WEAPON_ARTS_COMBAT_LAYERS.md`](docs/WEAPON_ARTS_COMBAT_LAYERS.md) — Foundation Actions, Weapon Arts, Codex Manifestations, weapon sets, five-slot hand, targeting families, and combat-tempo rules.
-- [`docs/FIRST_COMBAT_PACKAGE_GUARDIAN.md`](docs/FIRST_COMBAT_PACKAGE_GUARDIAN.md) — first complete playable combat package: Guardian, Arming Sword & Shield, Resolve, Guard timing, Weapon Arts, starter manifestations, mastery, and equipment evolution.
+- [`docs/FIRST_COMBAT_PACKAGE_GUARDIAN.md`](docs/FIRST_COMBAT_PACKAGE_GUARDIAN.md) — Guardian, Arming Sword & Shield, Resolve, Guard timing, Weapon Arts, starter manifestations, mastery, and equipment evolution.
+- [`docs/SECOND_COMBAT_PACKAGE_ARCANIST.md`](docs/SECOND_COMBAT_PACKAGE_ARCANIST.md) — Arcanist, Channeling Staff & Arcane Focus, Attunement, Sigils, ranged Weapon Arts, starter spells, mastery, and magical readability rules.
 
 ### Character & Progression Systems
 
@@ -51,7 +53,7 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 - [`docs/DIVINE_CODEX_LORE.md`](docs/DIVINE_CODEX_LORE.md) — Divine Codex, Transference, gods, Authorities, perception, and the central metaphysical mystery.
 - [`docs/LIVING_WORLD.md`](docs/LIVING_WORLD.md) — world time, faction reputation, behavioral tendencies, consequences, projects, settlements, and hero/villain paths.
 - [`docs/NARRATIVE_STRUCTURE.md`](docs/NARRATIVE_STRUCTURE.md) — Core Mystery, regional storylines, companion arcs, emergent stories, campaign history, and Story Revelations.
-- [`docs/FIRST_REGION_AND_DUNGEON.md`](docs/FIRST_REGION_AND_DUNGEON.md) — Greyfen March, Hearthcross, first factions, regional state, The Buried Gate, Gatebound Hob, and the first shared Story Revelation.
+- [`docs/FIRST_REGION_AND_DUNGEON.md`](docs/FIRST_REGION_AND_DUNGEON.md) — Greyfen March, Hearthcross, first factions, regional state, The Buried Gate, Gatebound Hob, and first shared Story Revelation.
 - [`docs/DUNGEONS.md`](docs/DUNGEONS.md) — infinite dungeon framework.
 - [`docs/TOWN.md`](docs/TOWN.md) — persistent town progression framework.
 
@@ -65,48 +67,74 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 
 ## Current design version
 
-**v0.2.14 — First Combat Package**
+**v0.2.15 — Arcanist Ranged/Magic Combat Package**
 
-The first fully specified playable discipline is **Guardian**, paired with **Arming Sword & Shield**.
+The second fully specified prototype discipline is **Arcanist**, paired with **Channeling Staff & Arcane Focus**.
 
-Guardian is an active-defense discipline rather than a passive MMO tank. Its core resource, **Resolve**, is earned primarily through correctly answering danger: timed blocks, interrupts, physical interception, protecting allies, and surviving heavy pressure with good positioning.
+Arcanist is a mobile ranged magical-control discipline built around aim, spatial setup, projectile shaping, compact Sigils, elemental/status interaction, and converting successful preparation into **Attunement**.
 
-### First Weapon Art package
+### Reliable Arcanist weapon package
 
-Reliable, non-random actions:
+Baseline actions:
 
-- **Advancing Slash** — short gap-closing attack; Guardian gains Resolve when pressuring enemies targeting allies.
-- **Shield Bash** — compact interrupt/stagger tool; successful attack interruption generates extra Resolve.
-- **Intercept** — quickly reposition toward an ally or protected point while raising the shield; successful rescue blocks are a major Resolve source.
-- **Counterstep** — mobile defensive footwork that rewards causing an attack to miss or be deflected.
+- **Arc Bolt** — quick aimable magical projectile.
+- **Focused Lance** — chargeable precision projectile with higher commitment and weak-point pressure.
+- **Focus Guard** — brief directional magical ward; useful against selected projectiles and magical bursts but intentionally less stable than Guardian's shield.
 
-### Prototype Guard outcomes
+Reliable Weapon Arts:
 
-- **Weak Guard** — mistimed or poorly angled; high defensive strain and no special reward.
-- **Solid Guard** — correctly faced defense; normal cost and possible Resolve.
-- **Perfect Guard** — narrow impact timing; lower cost, stronger Resolve, and counter opportunities.
+- **Sigil Cast** — place a compact magical anchor that can modify projectiles and be transformed by manifestations.
+- **Arc Step** — magical repositioning that interacts with nearby Sigils.
+- **Disrupting Pulse** — close-range interruption tool, especially useful against empowered or magical actions.
+- **Threaded Shot** — precision projectile that gains additional properties when fired through a Sigil.
 
-Guard is deliberately not the answer to every attack. The first boss must include attacks that should be dodged or repositioned around.
+### Discipline mechanic — Attunement
 
-### First five Guardian manifestations
+Attunement is earned through successful magical sequencing rather than passive regeneration. Sources include threading attacks through Sigils, consuming prepared effects, exploiting weaknesses, and interrupting empowered magical actions.
 
-1. **Brace → Perfect Guard** — same-slot Reaction transformation testing.
-2. **Shield Counter** — spends Resolve to convert defensive setup into stagger/offense.
-3. **Guardian's Advance** — modifies Advancing Slash and protects allies along the movement path.
-4. **Hold Fast** — short active frontline Stance that converts good defense into nearby ally protection.
-5. **Severing Riposte** — finisher that rewards Exposed/Staggered targets and cross-player status setup.
+Attunement can then strengthen higher-impact manifestations and magical Weapon Art interactions.
 
-The key combat principle remains:
+### First five Arcanist manifestations
 
-**Reliable weapon play must already feel good before the Codex appears; manifestations then deepen, transform, and exploit that combat vocabulary.**
+1. **Ember Rune** — transforms a Sigil into a Fire property source that builds Burning.
+2. **Detonate Sigil** — consumes a prepared Sigil for a property-dependent area effect.
+3. **Mana Thread** — temporary stance that improves projectile/Sigil interaction.
+4. **Gravitic Snare** — compact control field that slows and draws lighter enemies inward.
+5. **Arc Lance** — Attunement-powered precision finisher that rewards Burning, Marked, Shocked, Frosted, Exposed, and other compatible setup states.
+
+The key magic principle is:
+
+**Magic should shape the battlefield, not merely replace arrows with colored projectiles.**
+
+## Prototype Disciplines
+
+### Guardian
+
+**Arming Sword & Shield**
+
+**Read threat → Guard/Intercept/Interrupt → build Resolve → convert defense into counter-pressure.**
+
+Guardian tests active defense, physical protection, stagger, melee timing, same-slot card transformations, and frontline co-op support.
+
+### Arcanist
+
+**Channeling Staff & Arcane Focus**
+
+**Position → place/shape Sigils → thread or control → build Attunement → convert setup into magical payoff.**
+
+Arcanist tests ranged aiming, ground targeting, magical spatial control, elemental/status interactions, controller placement ergonomics, and VFX readability.
+
+Neither discipline should require the other. Their shared status vocabulary should create optional co-op synergies.
 
 ## First Region
 
-The first shared region is **the Greyfen March**, centered on **Hearthcross**. It is intentionally compact and reactive rather than open-world-scale.
+The first shared region is **the Greyfen March**, centered on **Hearthcross**. The first dungeon is **The Buried Gate** and its first boss is the **Gatebound Hob**.
 
-Hearthcross includes the Adventurer Guild Hall, Split Anvil blacksmith, Lantern House, Shrine of the Returning Flame, Survey Office / Archive Annex, and Underbridge Market.
+Gatebound Hob now serves as a shared combat benchmark:
 
-The first dungeon is **The Buried Gate**. Its first boss, the **Gatebound Hob**, now doubles as the primary Guardian test encounter: heavy telegraphs reward Perfect Guard, pressure moments reward Intercept and Hold Fast, and unblockable or unsuitable attacks force dodging.
+- Guardian must distinguish blockable, interruptible, and dodge-required attacks.
+- Arcanist must maintain useful range, place Sigils under pressure, control adds/hazards, and avoid static casting.
+- Both disciplines can contribute to shared status and Exposed windows.
 
 After the boss, the party reaches the true Buried Gate and receives the first shared Story Revelation:
 
@@ -119,21 +147,16 @@ Origin and Background are separate concepts:
 - **Origin:** how did you enter this world?
 - **Background:** who were you before that happened?
 
-The first two complete opening paths are:
+The first two complete opening paths are **The Stranded** and **The Invited**. Both converge on Hearthcross while retaining different Skills, social circumstances, perception lenses, and narrative flags.
 
-1. **Accidental Transfer — The Stranded**
-2. **Ritual Summon — The Invited**
-
-Both converge on Hearthcross while retaining different Skills, social circumstances, perception lenses, and narrative flags.
-
-Guardian can emerge differently by Origin: The Stranded may discover protection/interception behavior organically, while The Invited can be formally evaluated and trained.
+Both Guardian and Arcanist can be discovered organically or through formal instruction depending on Origin and Background.
 
 ## Combat Architecture
 
 Combat uses three formal layers:
 
 1. **Foundation Actions** — movement, dodge, interaction, traversal, camera/aim, and other reliable non-random actions.
-2. **Weapon Arts** — reliable combat actions defined by weapon family, discipline, Skills, equipment mastery, and item evolution.
+2. **Weapon Arts** — reliable actions defined by weapon family, discipline, Skills, equipment mastery, and item evolution.
 3. **Codex Manifestations** — rotating exceptional options such as Techniques, Spells, Reactions, Stances, Summons, Miracles, and Authorities.
 
 Prototype formula:
@@ -150,17 +173,7 @@ Visual target: **stylized anime fantasy with softly stylized PBR environments an
 
 ## Narrative Structure
 
-The game uses a **sandbox-first living world with a discoverable core mystery**.
-
-Narrative layers:
-
-1. Core Mystery
-2. Regional Storylines
-3. Character & Companion Arcs
-4. Emergent World Stories
-5. Player Campaign History
-
-The Core Mystery advances mainly through Story Revelations rather than a rigid quest chain.
+The game uses a **sandbox-first living world with a discoverable core mystery**. The Core Mystery advances mainly through Story Revelations rather than a rigid quest chain.
 
 ## Living World Principle
 
@@ -182,44 +195,26 @@ A host loads their timeline and up to five visitors join with their own characte
 
 **Vulnerable Adventurer → Competent Specialist → Synergy-Driven Veteran → System-Breaking Legendary Build**
 
-## Design status labels
+## Next prototype target — Guardian + Arcanist in the Buried Gate
 
-- **Core Rule** — foundational unless deliberately changed.
-- **Canon Lore** — current setting truth unless deliberately retconned.
-- **Narrative Rule** — foundational structure for authored and emergent story content.
-- **Visual Direction** — production-facing target subject to prototype validation where noted.
-- **Prototype Default** — chosen for testing; expected to change.
-- **Content Guideline** — direction for future content design.
-- **Technical Direction** — intended implementation architecture subject to prototype validation.
-- **Open Question** — intentionally unresolved.
+Validate both combat extremes against the same content:
 
-## Next prototype target — Guardian in the Buried Gate
-
-Validate the end-to-end early-game combat chain:
-
-- The Stranded or The Invited opening
-- Hearthcross convergence
-- Sword/Shield baseline combat before Codex access
-- Swordsmanship, Shield Handling, and Combat Awareness Skills
-- adaptive first manifestation
-- Guardian qualification/training
-- Resolve generation
-- Weak/Solid/Perfect Guard distinction
-- Advancing Slash, Shield Bash, Intercept, and Counterstep
-- five-slot Active Codex hand
+- Sword/Shield active defense and Staff/Focus ranged magic before Codex access
+- Guardian Resolve and Arcanist Attunement
+- Weak/Solid/Perfect Guard timing
+- aimable Arc Bolt and Focused Lance
+- Sigil placement and Threaded Shot geometry
+- five-slot Active Codex hands
 - Brace → Perfect Guard transformation
-- co-op Guardian's Advance and Hold Fast behavior
-- ally status → Severing Riposte synergy
-- Gatebound Hob boss
-- Hearthcross Militia Shield mastery
-- first equipment evolution toward **Gatewarden Shield**
-- 1–6 player readability and responsiveness
+- Ember Rune → Detonate Sigil setup/payoff
+- Gravitic Snare crowd-control readability
+- Guardian/Arcanist cross-status synergy
+- Gatebound Hob under solo and co-op pressure
+- **Gatewarden Shield** and **Gate-Echo Staff** equipment evolution hooks
+- keyboard/mouse and controller targeting
+- magical VFX readability at 1–6 players
 
-If this package feels good without relying on the Codex for basic functionality, it becomes the production template for the next prototype disciplines.
-
-## Following gameplay target — v0.3.0 Combat Prototype
-
-After validating Guardian, expand to three prototype disciplines, multiple weapon families, multiclass interactions, broader class card pools, equipment families, companions, enemy families, elites, the Buried Gate content slice, treasures, hidden qualifications, Guild advancement, wounds, extraction, and expanded town progression.
+The next combat-content decision should add a **third discipline with a different movement/resource profile**, giving the prototype a three-point comparison rather than two variations on the same pattern.
 
 ## License
 
