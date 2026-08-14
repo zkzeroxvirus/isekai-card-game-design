@@ -1,12 +1,198 @@
 # Design Patch Log
 
-This log records meaningful rules, system, terminology, technical-direction, and balance changes. Prototype defaults may change frequently; core-rule changes should explain the reason and expected design impact.
+This log records meaningful rules, system, terminology, technical-direction, lore, and balance changes. Prototype defaults may change frequently; core-rule and canon-lore changes should explain the reason and expected design impact.
 
 Version format follows semantic-style design versioning:
 
 - **MAJOR** — foundational redesign or compatibility-breaking rules overhaul
 - **MINOR** — new systems, mechanics, card families, classes, or substantial rule additions
-- **PATCH / interim milestone** — clarifications, technical direction, balance changes, wording fixes, and narrow mechanical adjustments
+- **PATCH / interim milestone** — clarifications, technical direction, lore framework, balance changes, wording fixes, and narrow mechanical adjustments
+
+---
+
+## v0.2.6 — Divine Codex & Isekai Lore Framework — 2026-08-13
+
+### Canon Lore Locked
+
+Established the central metaphysical explanation for the card system:
+
+**Cards are manifestations of the soul's permitted interactions with the laws of the world.**
+
+Cards are not normally literal physical objects. The card UI represents abilities, techniques, spells, permissions, memories, blessings, and supernatural concepts becoming available to the character through a soul-bound system.
+
+### Added — The Transference
+
+- Added the **Transference** as the working term for the process that transports, reincarnates, summons, or otherwise transfers an otherworlder's soul into the setting.
+- The Transference may involve origin-world recognition, memory handling, compatibility testing, vessel selection, divine observation, patronage, Origin assignment, and Codex attunement.
+- Established that mortals do not fully understand the process.
+- Established that even the gods may not possess complete authority over it.
+
+### Added — Divine Codex
+
+- Added **Divine Codex** as the working term for the soul-bound system used to access manifestations.
+- Defined the **Active Codex** as the subset of known abilities currently attuned for reliable manifestation.
+- Established an in-world explanation for deck-size limitations: mortal souls cannot safely stabilize unlimited abilities for immediate access.
+- Deck construction now canonically represents **soul attunement** rather than choosing physical cards from inventory.
+
+### Added — Card-Zone Lore Mapping
+
+Mapped gameplay zones to metaphysical states:
+
+- Deck → dormant possibilities
+- Draw → Manifestation / Awakening
+- Hand → currently manifested possibilities
+- Play → Invocation / Expression
+- Discard → Memory / Return state
+- Exhaust → soul exhaustion / temporary lockout
+- Prepared → deliberately held manifestation
+- Sealed → restricted access
+- In Play → sustained manifestation
+
+This allows the game to retain clear deckbuilder terminology while maintaining an internally consistent world explanation.
+
+### Added — Native vs Otherworlder Perception
+
+- Established that the underlying supernatural system can be shared by natives and otherworlders while being perceived differently.
+- Otherworlders may see explicit cards, costs, tags, statuses, rarity, mastery prompts, and System Messages because the Transference translates metaphysical rules into concepts their minds understand.
+- Native inhabitants may experience equivalent mechanics as instinct, spiritual readiness, ritual forms, disciplines, or named techniques rather than visible cards.
+- Mechanically identical abilities may therefore have different cultural interpretations.
+
+### Added — Mortal Terminology Variance
+
+Different cultures and institutions may describe the same phenomenon using competing terminology such as:
+
+- Skill Cards
+- Manifestations
+- Soul Imprints
+- Divine Script
+- Codex Arts
+- Soul Forms
+- Fragments
+- Invocations
+
+No mortal culture is guaranteed to possess the correct interpretation.
+
+### Changed — The Gods
+
+- The gods can influence, administer, gatekeep, exploit, observe, and interact with the Codex and Transference.
+- The gods are **not confirmed creators of the underlying system**.
+- Different gods may possess different levels of permission and knowledge.
+- Some gods may falsely or incompletely claim authorship over the system.
+- Gods themselves may be constrained by deeper rules.
+
+### Added — Divine Domains & Patronage
+
+- Added Divine Domains as thematic sources of blessings, quests, faction identities, rare cards, miracles, and narrative influence.
+- Added provisional Domain examples centered on protection/renewal, death/souls, hunting/survival, knowledge/secrets, and travel/luck.
+- Added patronage as an optional relationship rather than a mandatory progression layer.
+- Characters may accept, reject, inherit, steal, unknowingly carry, or actively oppose divine influence.
+
+### Added — Ability Lore Hierarchy
+
+Established a lore-facing hierarchy:
+
+- **Techniques** — trainable mortal abilities
+- **Arts** — refined or supernatural expressions of trained disciplines
+- **Spells** — structured manipulation of mana or magical laws
+- **Blessings** — permissions granted through higher powers, covenants, or sacred sources
+- **Miracles** — acts beyond normal mortal capability
+- **Authorities** — permissions to alter or directly interact with fundamental world rules
+
+Authorities are explicitly **not merely higher-rarity cards**. They operate at a higher rules layer and may interact with concepts such as death, identity, distance, memory, causality, contracts, time, fate, summoning, and Dungeon Laws.
+
+### Added — Divine, Forbidden & Corrupted Manifestations
+
+Added narrative space for:
+
+- Divine Cards
+- Forbidden Cards
+- Corrupted Cards
+- Authority Cards
+- Unique Skills
+- Curses
+- Miracles
+
+Their provenance should matter mechanically and narratively.
+
+### Added — Canonical System Messages
+
+- System Messages may be diegetic manifestations of the Codex rather than purely non-diegetic UI.
+- Hidden-condition messages, seals, Authority recognition, and evolution prompts can exist as real experiences for characters capable of perceiving them.
+- System reliability and clarity may itself become part of progression and mystery.
+
+### Changed — Origins
+
+Origins may now encode aspects of the Transference itself, including:
+
+- previous world
+- method of arrival
+- memory condition
+- vessel/body type
+- divine interference
+- anomalous compatibility
+- soul damage
+- forbidden inheritance
+- failed summoning
+- reincarnation circumstances
+
+Origins can therefore affect Codex behavior, narrative events, divine attention, and class access.
+
+### Changed — Skill & Equipment Lore
+
+- Skill Mastery now canonically represents the soul becoming more capable of expressing a manifestation deeply and reliably.
+- Skill evolution may transform mundane techniques into metaphysically recognized concepts, vows, or supernatural forms.
+- Equipment may contain stored techniques, ancestral imprints, monster memories, divine blessings, sealed permissions, or fragments of Authority.
+- Equipment Mastery may represent synchronization between the wielder's soul and concepts embedded in an item.
+
+### Added — Central Metaphysical Mystery
+
+The following systems are now suspected to be connected parts of a deeper ancient infrastructure:
+
+- Divine Codex
+- Transference
+- Dungeon Laws
+- Endless Dungeon
+- Authorities
+- monster evolution
+- soul transfer between worlds
+
+Intended progression of player understanding:
+
+1. The gods brought otherworlders here and granted the system.
+2. Different gods appear to control different portions of it.
+3. Evidence suggests the system predates the known gods.
+4. The Endless Dungeon may be part of the same architecture governing souls, manifestations, and world laws.
+5. The true reason souls cross between worlds becomes a central endgame mystery.
+
+### New Narrative Design Rule
+
+**Game mechanics should increasingly become world lore as the player gains knowledge.**
+
+Systems that initially appear to be normal game abstractions may later receive in-world explanations through exploration and discovery.
+
+### Canon Assumptions Locked
+
+1. Cards are soul manifestations, not normally physical cards.
+2. The equipped deck is the character's Active Codex.
+3. Drawing represents abilities becoming manifested and immediately accessible.
+4. Otherworlders may perceive an explicit game-like interface because the Transference translates the system for their minds.
+5. Natives can participate in the same underlying system without necessarily perceiving literal cards.
+6. Gods interact with and influence the system but are not confirmed to have created it.
+7. Blessings, Miracles, and Authorities represent deeper layers of supernatural permission.
+8. Authorities operate at a higher rules layer and are narratively exceptional.
+9. The Divine Codex, Transference, Dungeon Laws, and Endless Dungeon are connected to a larger unresolved mystery.
+10. The long-form narrative will eventually question why souls are transferred between worlds at all.
+
+### Deliberately Unresolved
+
+- final name of the Divine Codex
+- final name of the Transference
+- final pantheon
+- whether all gods know the system predates them
+- exact origin of Authorities
+- protagonist Codex anomalies
+- exact relationship between the Endless Dungeon and soul transfer
+- ultimate purpose of cross-world reincarnation
 
 ---
 
