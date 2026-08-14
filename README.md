@@ -1,261 +1,267 @@
 # Isekai Card Game Design
 
-Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** built around customizable characters, weapon-driven combat, a soul-bound Divine Codex, Skills, modular disciplines, Jobs, hidden progression, equipment mastery, living-world consequences, narrative discovery, infinitely scaling dungeons, town progression, and 1–6 player online co-op.
+Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** built around customizable characters, weapon-driven combat, a soul-bound Divine Codex, Skills, modular Disciplines, location-based Jobs, hidden progression, equipment mastery, living-world consequences, narrative discovery, dungeons, town progression, and online co-op.
 
-## Design pillars
+## Core design pillars
 
-1. **Build a character, not just a deck.** Cards are exceptional manifestations inside a larger build made from Origin, Background, Skills, Jobs, weapons, disciplines, equipment, mastery, titles, knowledge, relationships, and world history.
-2. **The deck defines capability; the player controls execution.** Movement, positioning, aiming, traversal, dodging, and interaction happen directly in 3D space.
+1. **Build a character, not just a deck.** Character identity comes from Origin, Background, Skills, Jobs, weapons, Disciplines, equipment, mastery, titles, knowledge, relationships, and world history.
+2. **The deck defines capability; the player controls execution.** Movement, aiming, positioning, dodging, traversal, and interaction happen directly in 3D space.
 3. **Weapons determine how you fight. Cards determine what extraordinary options you can manifest while fighting.**
 4. **Cards are manifestations of the soul.** The Active Codex represents permitted interactions with the laws of the world.
-5. **Origins change both history and perception.** Arrival method, Background, Skills, divine involvement, combat experience, and System Comprehension can alter onboarding and narrative access.
-6. **Skills are broader than cards.** Skills affect combat, crafting, survival, exploration, social interaction, class qualification, and perception.
-7. **Jobs describe recognized roles; Disciplines describe combat frameworks.** Jobs provide effects, Skills, permissions, social recognition, and qualification routes without becoming alternate combat bars.
-8. **Visible progression tells the player what they can pursue. Hidden progression rewards the person they accidentally became.**
-9. **New places expand the character-build space.** Jobs are embedded in institutions, cultures, environments, activities, and secrets rather than a universal catalogue.
-10. **Settlement growth increases depth before breadth.** A settlement becomes better at what it already is rather than eventually teaching every profession in the world.
-11. **The world remembers.** Time passes, factions act, settlements change, and consequences can return much later.
-12. **Morality emerges from behavior.** Heroic, villainous, pragmatic, revolutionary, tyrannical, and mixed paths are supported without a single Good/Evil meter.
-13. **The story is discovered, not merely followed.** The Core Mystery advances through Story Revelations, exploration, factions, companions, and world state.
-14. **Visual progression mirrors character progression.** The world begins grounded and becomes increasingly supernatural as power rises.
-15. **Classes are modular disciplines.** Characters qualify for and combine disciplines rather than being permanently locked into one identity.
-16. **Mastery changes abilities.** Skills and equipment branch and evolve through meaningful use, training, accomplishments, and discoveries.
-17. **Magic should shape the battlefield, not merely replace arrows with colored projectiles.** Ranged magic should use positioning, geometry, preparation, statuses, and spatial control.
-18. **Depth changes rules, not only numbers.** Infinite dungeon scaling uses enemy affixes, hazards, mutations, and Dungeon Laws alongside controlled stat growth.
-19. **Discovery is progression.** Hidden Jobs, hidden Disciplines, titles, equipment evolutions, recipes, divine permissions, system information, and dungeon phenomena reward experimentation.
-20. **Knowledge is power.** Bestiary research and System Comprehension eventually expose deeper world rules and hidden qualification information.
-21. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without deleting developed characters.
-22. **Multiplayer should feel like visiting another adventurer's world.** World persistence belongs to the host; character persistence belongs to each player.
-23. **The power curve escalates dramatically.** Vulnerable outsider becomes a specialized veteran and eventually a system-breaking legendary build.
-24. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper infrastructure behind the Divine Codex and Transference.
-25. **Isekai progression fantasy is the tone.** The player gradually learns, masters, and eventually exploits the hidden rules of a new fantasy world.
-
-## Repository map
-
-### Core Rules & Combat
-
-- [`docs/RULES_FRAMEWORK.md`](docs/RULES_FRAMEWORK.md) — core loop, character construction, combat, deck construction, party structure, run flow, and rules hierarchy.
-- [`docs/CARD_CATEGORIES.md`](docs/CARD_CATEGORIES.md) — card taxonomy, anatomy, rarity, sources, tags, and upgrade structure.
-- [`docs/MECHANICS.md`](docs/MECHANICS.md) — resources, damage, defense, statuses, keywords, triggers, and timing language.
-- [`docs/WEAPON_ARTS_COMBAT_LAYERS.md`](docs/WEAPON_ARTS_COMBAT_LAYERS.md) — Foundation Actions, Weapon Arts, Codex Manifestations, weapon sets, five-slot hand, targeting families, and combat-tempo rules.
-- [`docs/FIRST_COMBAT_PACKAGE_GUARDIAN.md`](docs/FIRST_COMBAT_PACKAGE_GUARDIAN.md) — Guardian, Arming Sword & Shield, Resolve, Guard timing, Weapon Arts, starter manifestations, mastery, and equipment evolution.
-- [`docs/SECOND_COMBAT_PACKAGE_ARCANIST.md`](docs/SECOND_COMBAT_PACKAGE_ARCANIST.md) — Arcanist, Channeling Staff & Arcane Focus, Attunement, Sigils, ranged Weapon Arts, starter spells, mastery, and magical readability rules.
-- [`docs/THIRD_COMBAT_PACKAGE_DUELIST.md`](docs/THIRD_COMBAT_PACKAGE_DUELIST.md) — Duelist, Twin Blades, Flow, mobile Weapon Arts, starter manifestations, team-opening creation, mastery, and multiclass bridges.
-
-### Character & Progression Systems
-
-- [`docs/ORIGINS_SKILLS_SYSTEM_PERCEPTION.md`](docs/ORIGINS_SKILLS_SYSTEM_PERCEPTION.md) — multiple Origin paths, the Threshold, Skills, System Comprehension, perception lenses, starting vulnerability, and gradual Codex discovery.
-- [`docs/STARTING_ORIGINS_AND_OPENINGS.md`](docs/STARTING_ORIGINS_AND_OPENINGS.md) — playable Origin set, Background layer, Threshold scenes, adaptive first manifestations, and opening convergence.
-- [`docs/JOBS_MULTICLASS_AND_HIDDEN_PROGRESSION.md`](docs/JOBS_MULTICLASS_AND_HIDDEN_PROGRESSION.md) — Jobs, Active Job slots, hidden qualifications, System Comprehension visibility tiers, Discipline multiclassing, Hybrid Manifestations, mutual exclusivity, and endgame classification drift.
-- [`docs/HEARTHCROSS_JOB_ECOSYSTEM.md`](docs/HEARTHCROSS_JOB_ECOSYSTEM.md) — first location-based Job roster, Greyfen/Buried Gate discovery, hidden Jobs, settlement expansion branches, Job-access tradeoffs, and the future-region Job template.
-- [`docs/PROGRESSION.md`](docs/PROGRESSION.md) — master progression model and long-term power arc.
-- [`docs/SKILL_MASTERY.md`](docs/SKILL_MASTERY.md) — persistent skill use, mastery tiers, branching upgrades, and hidden evolutions.
-- [`docs/EQUIPMENT_PROGRESSION.md`](docs/EQUIPMENT_PROGRESSION.md) — equipment mastery, learned techniques, affixes, crafting, and item evolution.
-- [`docs/GUILD_AND_RANK.md`](docs/GUILD_AND_RANK.md) — Adventurer Guild contracts, reputation, certifications, and rank.
-- [`docs/COMPANIONS.md`](docs/COMPANIONS.md) — companion progression, roles, recruitment, injuries, and Support Decks.
-- [`docs/KNOWLEDGE_AND_DEFEAT.md`](docs/KNOWLEDGE_AND_DEFEAT.md) — Bestiary progression, world knowledge, wounds, secured loot, extraction, and recovery.
-
-### Lore, Narrative & World Systems
-
-- [`docs/DIVINE_CODEX_LORE.md`](docs/DIVINE_CODEX_LORE.md) — Divine Codex, Transference, gods, Authorities, perception, and the central metaphysical mystery.
-- [`docs/LIVING_WORLD.md`](docs/LIVING_WORLD.md) — world time, faction reputation, behavioral tendencies, consequences, projects, settlements, and hero/villain paths.
-- [`docs/NARRATIVE_STRUCTURE.md`](docs/NARRATIVE_STRUCTURE.md) — Core Mystery, regional storylines, companion arcs, emergent stories, campaign history, and Story Revelations.
-- [`docs/FIRST_REGION_AND_DUNGEON.md`](docs/FIRST_REGION_AND_DUNGEON.md) — Greyfen March, Hearthcross, first factions, regional state, The Buried Gate, Gatebound Hob, and first shared Story Revelation.
-- [`docs/DUNGEONS.md`](docs/DUNGEONS.md) — infinite dungeon framework.
-- [`docs/TOWN.md`](docs/TOWN.md) — persistent town progression framework.
-
-### Visual & Technical Systems
-
-- [`docs/VISUAL_DIRECTION.md`](docs/VISUAL_DIRECTION.md) — stylized anime-fantasy rendering, character direction, equipment evolution, VFX hierarchy, Divine Codex UI, factions, monsters, and camera.
-- [`docs/TECHNICAL_DIRECTION.md`](docs/TECHNICAL_DIRECTION.md) — Unreal Engine 5 direction, listen-server co-op, ownership, persistence, instancing, and multiplayer risks.
-- [`docs/GLOSSARY.md`](docs/GLOSSARY.md) — controlled terminology.
-- [`docs/OPEN_QUESTIONS.md`](docs/OPEN_QUESTIONS.md) — unresolved decisions and prototype questions.
-- [`PATCHLOG.md`](PATCHLOG.md) and [`patches/`](patches/) — versioned design changes.
+5. **Skills are broader than cards.** They affect combat, crafting, survival, exploration, social interaction, class qualification, and perception.
+6. **Jobs describe recognized roles; Disciplines describe combat frameworks.**
+7. **Visible progression tells the player what they can pursue. Hidden progression rewards the person they accidentally became.**
+8. **New places expand the character-build space.** Jobs are embedded in institutions, cultures, environments, activities, and secrets rather than a universal catalogue.
+9. **Settlement growth increases depth before breadth.** A settlement gets better at what it already is rather than becoming a universal progression hub.
+10. **The world remembers.** Choices, faction outcomes, settlement state, and consequences persist.
+11. **Morality emerges from behavior.** The game supports heroic, villainous, pragmatic, revolutionary, tyrannical, and mixed paths without a universal Good/Evil meter.
+12. **Discovery is progression.** Hidden Jobs, Skills, Disciplines, manifestations, equipment evolutions, lore, and system information reward experimentation.
+13. **Multiclassing should create integrated identities, not larger piles of unrelated abilities.**
+14. **Magic should shape the battlefield, not merely replace arrows with colored projectiles.**
+15. **Failure creates consequences and stories without deleting developed characters.**
+16. **The gods do not necessarily own the system.** The Divine Codex, Transference, Dungeon Laws, and Authorities point toward deeper architecture.
+17. **Isekai progression fantasy is the tone.** The player begins vulnerable, learns the world's hidden rules, and eventually becomes capable of exploiting them.
 
 ## Current design version
 
-**v0.2.18 — Hearthcross Job Ecosystem**
+**v0.2.19 — Playable Demo Scope**
 
-Hearthcross is now the first complete implementation of **location-based Job discovery**.
+Broad feature expansion is now paused while the current systems are developed into one focused vertical slice.
 
-The governing rules are:
+The active implementation target is:
 
-**Locations create opportunities. Actions create qualifications. The Codex recognizes the result.**
+**The Stranded → Hearthcross → Greyfen March → The Buried Gate → Gatebound Hob → Gate Recognition → persistent return to Hearthcross**
 
-and:
+The demo exists to prove that the project's major ideas work **together**, not merely as separate design documents.
 
-**Settlement growth increases depth before breadth.**
+See [`docs/PLAYABLE_DEMO_SCOPE.md`](docs/PLAYABLE_DEMO_SCOPE.md).
 
-Hearthcross is a frontier settlement, so its available Jobs are intentionally practical, local, and incomplete. It teaches roots that can later branch into specialized professions elsewhere rather than becoming a universal profession capital.
+## Playable Demo Scope
 
-### Initial Hearthcross Job roots
+The first vertical slice should let a player:
 
-Openly discoverable:
+1. create a lightweight character and choose a Background
+2. begin as **Accidental Transfer — The Stranded**
+3. survive a low-information wilderness opening
+4. acquire a first Skill through actual behavior
+5. experience an adaptive first Codex manifestation
+6. reach Hearthcross
+7. learn one of three prototype combat Disciplines
+8. discover and activate one frontier Job
+9. resolve one Greyfen conflict with a persistent consequence
+10. enter The Buried Gate
+11. experience route choice, unsecured loot, securing/extraction, and Job/Skill interactions
+12. defeat the Gatebound Hob
+13. witness the first Gate recognition Story Revelation
+14. return to a Hearthcross that acknowledges what happened
 
-- **Adventurer** — Guild contracts, expedition capability, and professional frontier work.
-- **Scout** — Warden patrols, route knowledge, tracking, and threat detection.
-- **Smith** — practical repair, Greyfen materials, and frontier metalwork.
-- **Field Medic** — triage, wound treatment, and crisis medicine.
-- **Trader** — regional scarcity, logistics, negotiation, and caravan opportunity.
-- **Survey Assistant** — field records, mapping, research, and ruin documentation.
+Target first complete playthrough: roughly **60–120 minutes**, with replay value from different Backgrounds, Disciplines, first manifestations, Jobs, choices, and dungeon routes.
 
-Relationship/semi-hidden:
-
-- **Acolyte of the Returning Flame** — shrine rites, spiritual work, and religious relationships.
-- **Smuggler** — Underbridge trust, covert routes, restricted goods, and illicit logistics.
-
-Environment/activity driven:
-
-- **Forager**
-- **Trapper**
-
-Buried Gate discovery:
-
-- **Dungeon Surveyor**
-- **Relic Seeker**
-
-### First hidden Job seeds
-
-- **Greyfen Guide** — repeatedly proving that others can safely follow you through the March.
-- **Gate Listener** — sustained, non-destructive investigation of the Buried Gate's anomalous structures.
-- **Fen Scavenger** — salvage, improvisation, and possible learning from goblin scavenger traditions.
-- **Oathbearer** — a behavioral identity recognized through repeatedly honoring responsibility even when doing so costs reward or convenience.
-
-These are precursor identities rather than endgame destinations.
-
-## Hearthcross Expansion
-
-Town progression can deepen existing Job roots without eliminating the need to travel.
-
-Possible development projects include:
-
-- **Guild Expedition Desk** — deeper Adventurer, Scout, and Dungeon Surveyor progression.
-- **Split Anvil Frontier Forge** — deeper Smith/equipment mastery and Greyfen-specific techniques.
-- **Survey Office Field Archive** — deeper Survey Assistant, Dungeon Surveyor, Relic Seeker, and Gate Listener progression.
-- **Shrine Hospice & Spirit House** — deeper Field Medic, Acolyte, funerary, and spirit-related opportunities.
-- **Underbridge Hidden Routes** — deeper Smuggler, Trader, Fen Scavenger, and illicit Relic Seeker progression.
-
-A fully developed Hearthcross becomes exceptionally capable at frontier survival, logistics, Greyfen knowledge, practical craft, expedition support, and Buried Gate research. It still does not replace major academies, master forges, royal institutions, exotic cultures, specialist temples, or hidden regions elsewhere.
-
-## Job Availability as World State
-
-Job access can change with the host timeline.
-
-Examples:
-
-- stronger Wardens improve Scout opportunities while making Smuggling harder
-- stronger Underbridge expands illicit progression while affecting merchant confidence
-- shrine growth deepens spiritual/medical paths while potentially opposing forbidden research
-- preserving Buried Gate artifacts strengthens research routes; selling everything produces faster immediate wealth
-- integrating Greyfen goblin scavengers can reveal nonhuman Job traditions such as Scrapwright-like branches
-- losing mentors, factions, or communities can remove Job opportunities from that timeline
-
-New locations should therefore expand the character-build space by offering new ways to become someone.
-
-## Hidden Progression
-
-Hidden progression remains foundational.
-
-**The world tracks what you repeatedly prove about yourself. The Codex eventually gives that pattern a name.**
-
-Hidden qualifications can depend on behavior, mastery, narrative choices, world state, equipment history, failure/survival, unusual combinations, and negative conditions.
-
-System Comprehension controls how much of those qualifications can be seen.
-
-## Multiclassing
-
-Prototype multiclassing remains **Primary + Secondary Discipline**, with both Disciplines materially shaping the build.
-
-First hybrid bridges remain:
-
-- **Guardian + Duelist** — Blade Warden / Vanguard direction
-- **Arcanist + Duelist** — Spellblade direction
-- **Guardian + Arcanist** — Runic Bastion / Arcane Warden direction
-
-Jobs can alter these routes without becoming universal mandatory recipes.
-
-## Initial Three-Discipline Combat Triangle
+## Demo Combat Triangle
 
 ### Guardian — Arming Sword & Shield
 
 **Read threat → Guard/Intercept/Interrupt → build Resolve → convert defense into counter-pressure.**
 
+Tests active defense, positioning, protection, stagger, and melee timing.
+
 ### Arcanist — Channeling Staff & Arcane Focus
 
 **Position → place/shape Sigils → thread or control → build Attunement → convert setup into magical payoff.**
+
+Tests ranged aim, ground targeting, magical geometry, control, and status interaction.
 
 ### Duelist — Twin Blades
 
 **Read opening → Slipstep/angle change → build Flow → create or exploit vulnerability → commit finisher → disengage before greed is punished.**
 
-## First Region
+Tests mobility, timing, Deflect, angle changes, opening creation, and offensive tempo.
 
-The first shared region remains **the Greyfen March**, centered on **Hearthcross**. The first dungeon is **The Buried Gate**, whose first boss is the **Gatebound Hob**.
+## Demo Jobs
 
-Hearthcross now serves simultaneously as the first shared multiplayer hub, first living-world settlement, first multiclass/Job testbed, and the first demonstration that location and world state directly shape character-building opportunities.
+The full Hearthcross ecosystem is larger, but the demo intentionally implements a reduced roster.
 
-## Origins & Opening Experience
+Openly discoverable:
 
-Origin and Background remain separate:
+- **Adventurer**
+- **Scout**
+- **Smith**
+- **Field Medic**
+- **Survey Assistant**
 
-- **Origin:** how did you enter this world?
-- **Background:** who were you before that happened?
+Semi-hidden:
 
-The first two complete opening paths are **The Stranded** and **The Invited**. Both converge on Hearthcross while retaining different Skills, social circumstances, perception lenses, and narrative flags.
+- **Smuggler**
 
-Otherworlders may eventually prove unusually flexible at perceiving, retaining, swapping, and combining Job Imprints through the Divine Codex, but native characters remain capable of deep mastery and culturally specific progression unavailable through generic systems alone.
+Dungeon/activity discovery:
 
-## Combat Architecture
+- **Dungeon Surveyor**
 
-Combat uses three formal layers:
+Hidden progression:
 
-1. **Foundation Actions** — movement, dodge, interaction, traversal, camera/aim, and other reliable non-random actions.
-2. **Weapon Arts** — reliable actions defined by weapon family, discipline, Skills, equipment mastery, and item evolution.
-3. **Codex Manifestations** — rotating exceptional options such as Techniques, Spells, Reactions, Stances, Summons, Miracles, and Authorities.
+- one fully attainable hidden Job, likely **Oathbearer** or **Gate Listener**
+- the other may appear only as hidden qualification feedback in the first build
 
-Prototype formula:
+The rule remains:
 
-**Weapon Family + Class Discipline + Equipment Mastery = Weapon Moveset**
+**Locations create opportunities. Actions create qualifications. The Codex recognizes the result.**
 
-## Living World Principle
+## Hearthcross
 
-**The world remembers what the player did, who benefited, who suffered, and how much time has passed.**
+Hearthcross is a compact frontier hub, not a city-sized content map.
 
-Faction reputation is organization-specific, and morality emerges through persistent behavior and consequences rather than a universal meter.
+Required demo spaces:
 
-## Central Lore Mystery
+- town gate / Warden checkpoint
+- Adventurer Guild Hall
+- Split Anvil
+- Lantern House
+- Survey Office / Archive Annex
+- Shrine of the Returning Flame
+- Underbridge access point
 
-**The gods gave me this system → the gods only control parts of it → the system predates the known gods → the Endless Dungeon and soul transfer are part of the same ancient architecture → why are souls crossing worlds at all?**
+Its growth remains governed by:
+
+**Settlement growth increases depth before breadth.**
+
+## Greyfen March
+
+The demo includes one dense field route rather than a large open world.
+
+The principal regional choice centers on a Greyfen goblin scavenger conflict. The player may kill, displace, negotiate, trade, investigate the actual cause, or cooperate covertly depending on circumstances.
+
+A reduced world-state set should track consequences such as:
+
+- Warden Trust
+- Underbridge Influence
+- Goblin Relations
+- Road Safety
+
+At least one later interaction must visibly change because of the player's decision.
+
+## The Buried Gate
+
+The demo dungeon should include:
+
+- entry/staging
+- first combat
+- route split
+- hazard or observation space
+- world-state/goblin callback
+- secure/extraction checkpoint
+- anomaly room
+- pressure or elite encounter
+- Gatebound Hob
+- true Gate chamber
+
+The dungeon must prove combat, exploration, Knowledge, extraction, Jobs, world-state callbacks, and narrative mystery in the same space.
+
+## First Story Revelation
+
+After the Gatebound Hob:
+
+**The Buried Gate recognizes the character or party, but does not fully open.**
+
+Different System Comprehension levels should present different amounts of information without explaining the central mystery.
+
+## Persistence
+
+The demo should save at minimum:
+
+- Background
+- acquired Skills
+- chosen Discipline
+- Codex manifestations
+- equipment/mastery progress
+- known and active Jobs
+- Greyfen contract outcome
+- reduced faction/world-state variables
+- Buried Gate completion
+- Story Revelation flag
+- secured loot
+
+Returning to Hearthcross after reload should visibly acknowledge at least one earlier decision.
 
 ## Multiplayer Direction
 
-**World persistence belongs to the host. Character persistence belongs to each player.**
+The final game target remains **1–6 player online co-op**, with host-owned world state and player-owned character state.
 
-A host loads their timeline and up to five visitors join with their own characters. Visitors retain Origin, Skills, Jobs, perception lens, progression, and secured rewards, while available local opportunities are determined by the host world's Hearthcross state.
+For the first demo implementation:
+
+1. build server-authoritative gameplay from the start
+2. prove host + one client first
+3. scale the same slice toward 1–4 players as a stretch target
+4. preserve architecture compatible with eventual 1–6 play
+
+Full multiplayer scale must not block getting the single-player/host experience fun.
+
+## Demo Production Rule
+
+**Do not add a new major system until the vertical slice demonstrates that the existing systems are fun together.**
+
+New ideas can be recorded as backlog material, but implementation priority remains the Hearthcross vertical slice.
+
+## Repository map
+
+### Demo
+
+- [`docs/PLAYABLE_DEMO_SCOPE.md`](docs/PLAYABLE_DEMO_SCOPE.md) — frozen vertical-slice scope, milestones, content requirements, deferred systems, and success criteria.
+
+### Core Rules & Combat
+
+- [`docs/RULES_FRAMEWORK.md`](docs/RULES_FRAMEWORK.md)
+- [`docs/CARD_CATEGORIES.md`](docs/CARD_CATEGORIES.md)
+- [`docs/MECHANICS.md`](docs/MECHANICS.md)
+- [`docs/WEAPON_ARTS_COMBAT_LAYERS.md`](docs/WEAPON_ARTS_COMBAT_LAYERS.md)
+- [`docs/FIRST_COMBAT_PACKAGE_GUARDIAN.md`](docs/FIRST_COMBAT_PACKAGE_GUARDIAN.md)
+- [`docs/SECOND_COMBAT_PACKAGE_ARCANIST.md`](docs/SECOND_COMBAT_PACKAGE_ARCANIST.md)
+- [`docs/THIRD_COMBAT_PACKAGE_DUELIST.md`](docs/THIRD_COMBAT_PACKAGE_DUELIST.md)
+
+### Character & Progression
+
+- [`docs/ORIGINS_SKILLS_SYSTEM_PERCEPTION.md`](docs/ORIGINS_SKILLS_SYSTEM_PERCEPTION.md)
+- [`docs/STARTING_ORIGINS_AND_OPENINGS.md`](docs/STARTING_ORIGINS_AND_OPENINGS.md)
+- [`docs/JOBS_MULTICLASS_AND_HIDDEN_PROGRESSION.md`](docs/JOBS_MULTICLASS_AND_HIDDEN_PROGRESSION.md)
+- [`docs/HEARTHCROSS_JOB_ECOSYSTEM.md`](docs/HEARTHCROSS_JOB_ECOSYSTEM.md)
+- [`docs/PROGRESSION.md`](docs/PROGRESSION.md)
+- [`docs/SKILL_MASTERY.md`](docs/SKILL_MASTERY.md)
+- [`docs/EQUIPMENT_PROGRESSION.md`](docs/EQUIPMENT_PROGRESSION.md)
+- [`docs/GUILD_AND_RANK.md`](docs/GUILD_AND_RANK.md)
+- [`docs/COMPANIONS.md`](docs/COMPANIONS.md)
+- [`docs/KNOWLEDGE_AND_DEFEAT.md`](docs/KNOWLEDGE_AND_DEFEAT.md)
+
+### Lore, World & Narrative
+
+- [`docs/DIVINE_CODEX_LORE.md`](docs/DIVINE_CODEX_LORE.md)
+- [`docs/LIVING_WORLD.md`](docs/LIVING_WORLD.md)
+- [`docs/NARRATIVE_STRUCTURE.md`](docs/NARRATIVE_STRUCTURE.md)
+- [`docs/FIRST_REGION_AND_DUNGEON.md`](docs/FIRST_REGION_AND_DUNGEON.md)
+- [`docs/DUNGEONS.md`](docs/DUNGEONS.md)
+- [`docs/TOWN.md`](docs/TOWN.md)
+
+### Visual & Technical
+
+- [`docs/VISUAL_DIRECTION.md`](docs/VISUAL_DIRECTION.md)
+- [`docs/TECHNICAL_DIRECTION.md`](docs/TECHNICAL_DIRECTION.md)
+- [`docs/GLOSSARY.md`](docs/GLOSSARY.md)
+- [`docs/OPEN_QUESTIONS.md`](docs/OPEN_QUESTIONS.md)
+- [`PATCHLOG.md`](PATCHLOG.md) and [`patches/`](patches/)
+
+## Immediate implementation milestones
+
+1. **Movement & Combat Sandbox** — third-person controller, one enemy, all three weapon packages, Weapon Arts, hit/defense authority.
+2. **Codex Combat** — five hand slots, draw/use/discard/cycle, Resolve/Attunement/Flow, Sigils, transformed-card flow.
+3. **Opening + Hearthcross** — Stranded prologue, first Skill, first manifestation, compact hub, Discipline and Job onboarding.
+4. **Greyfen Field Slice** — route, goblin choice, persistent consequence, Job/Skill interactions.
+5. **Buried Gate** — route split, extraction checkpoint, encounters, Gatebound Hob, Gate revelation.
+6. **Persistence + Multiplayer Proof** — save/reload, host state, player state, host + one client.
+7. **Demo Polish** — onboarding, controller pass, VFX readability, audio, performance, bugs, replay hooks.
 
 ## Power Curve
 
 **Vulnerable Adventurer → Competent Specialist → Synergy-Driven Veteran → System-Breaking Legendary Build**
 
-## Next prototype target — Hearthcross Job Discovery in Play
-
-Validate:
-
-- one Active Job slot
-- six openly discoverable frontier Job roots
-- at least two relationship/semi-hidden Jobs
-- one environment-driven Job discovery
-- Dungeon Surveyor qualification inside The Buried Gate
-- one hidden Job signaled only through System Comprehension
-- one Job opportunity affected by Warden/Underbridge world state
-- one mentor or institution whose loss changes Job availability
-- one nonhuman Job tradition seed through Greyfen goblin interaction
-- one town expansion that deepens an existing Job without adding an unrelated profession
-- one advanced specialization that explicitly requires leaving Hearthcross
-- Primary + Secondary Discipline integration with active Jobs
-- visitor characters interacting with the host's local Job opportunities without overwriting their own persistent character state
-
-The goal is to prove that **exploration, settlement development, faction choices, world state, and character progression all feed the same discovery loop**.
+The demo covers only the earliest portion of that curve while clearly showing the systems that can later support the rest.
 
 ## License
 
