@@ -9,22 +9,23 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 3. **Weapons determine how you fight. Cards determine what extraordinary options you can manifest while fighting.** Reliable Weapon Arts form the combat backbone while the Active Codex creates tactical variation and supernatural escalation.
 4. **Cards are manifestations of the soul.** The card interface represents the character's permitted interactions with the laws of the world through a soul-bound Active Codex.
 5. **Origins change both history and perception.** Arrival method, previous-world experience, Skills, divine involvement, combat experience, and System Comprehension can change how the game initially presents itself.
-6. **Skills are broader than cards.** Persistent Skills can affect combat, crafting, survival, exploration, social interaction, perception, class qualification, and narrative access.
-7. **The world remembers.** Time passes, factions act, settlements change, and consequences can return much later in the campaign.
-8. **Morality emerges from behavior.** Heroic, villainous, pragmatic, revolutionary, tyrannical, and mixed paths are supported without a single Good/Evil meter.
-9. **The story is discovered, not merely followed.** A central mystery exists, but players uncover it through revelations, exploration, factions, companions, and world state rather than a rigid main-quest chain.
-10. **Visual progression mirrors character progression.** The world begins grounded and readable while equipment, magic, dungeons, divine phenomena, and Authorities become increasingly supernatural.
-11. **Classes are modular disciplines.** Characters combine disciplines and qualifications rather than being permanently locked into one class identity.
-12. **Mastery changes abilities.** Skills and equipment can improve, branch, and evolve through meaningful use, training, accomplishments, and discoveries.
-13. **Runs create temporary power; the world creates permanent possibility.** Dungeon upgrades reset while mastery, treasures, achievements, town systems, companions, knowledge, relationships, and discoveries persist.
-14. **Depth changes rules, not only numbers.** Infinite dungeon scaling adds affixes, hazards, mutations, and Dungeon Laws alongside controlled numerical scaling.
-15. **Discovery is progression.** Hidden classes, hybrid cards, titles, achievements, equipment evolutions, recipes, divine permissions, system information, and dungeon phenomena reward experimentation.
-16. **Knowledge is power.** Bestiary research and System Comprehension reveal enemy behavior, weaknesses, hidden interactions, and eventually the true nature of the world's systems.
-17. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without erasing developed characters.
-18. **Multiplayer should feel like visiting another adventurer's world.** World persistence and timeline belong to the host; persistent characters belong to individual players.
-19. **The power curve escalates dramatically.** The intended arc moves from vulnerable adventurer to specialized veteran to legendary system-breaking build.
-20. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper infrastructure behind the Divine Codex and Transference.
-21. **Isekai progression fantasy is the tone.** The player should feel as though they are gradually learning, mastering, and eventually exploiting the hidden rules of a new fantasy world.
+6. **Every Origin teaches the same world through a different lens.** Origin prologues can vary dramatically while converging into the same underlying world and multiplayer simulation.
+7. **Skills are broader than cards.** Persistent Skills can affect combat, crafting, survival, exploration, social interaction, perception, class qualification, and narrative access.
+8. **The world remembers.** Time passes, factions act, settlements change, and consequences can return much later in the campaign.
+9. **Morality emerges from behavior.** Heroic, villainous, pragmatic, revolutionary, tyrannical, and mixed paths are supported without a single Good/Evil meter.
+10. **The story is discovered, not merely followed.** A central mystery exists, but players uncover it through revelations, exploration, factions, companions, and world state rather than a rigid main-quest chain.
+11. **Visual progression mirrors character progression.** The world begins grounded and readable while equipment, magic, dungeons, divine phenomena, and Authorities become increasingly supernatural.
+12. **Classes are modular disciplines.** Characters combine disciplines and qualifications rather than being permanently locked into one class identity.
+13. **Mastery changes abilities.** Skills and equipment can improve, branch, and evolve through meaningful use, training, accomplishments, and discoveries.
+14. **Runs create temporary power; the world creates permanent possibility.** Dungeon upgrades reset while mastery, treasures, achievements, town systems, companions, knowledge, relationships, and discoveries persist.
+15. **Depth changes rules, not only numbers.** Infinite dungeon scaling adds affixes, hazards, mutations, and Dungeon Laws alongside controlled numerical scaling.
+16. **Discovery is progression.** Hidden classes, hybrid cards, titles, achievements, equipment evolutions, recipes, divine permissions, system information, and dungeon phenomena reward experimentation.
+17. **Knowledge is power.** Bestiary research and System Comprehension reveal enemy behavior, weaknesses, hidden interactions, and eventually the true nature of the world's systems.
+18. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without erasing developed characters.
+19. **Multiplayer should feel like visiting another adventurer's world.** World persistence and timeline belong to the host; persistent characters belong to individual players.
+20. **The power curve escalates dramatically.** The intended arc moves from vulnerable adventurer to specialized veteran to legendary system-breaking build.
+21. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper infrastructure behind the Divine Codex and Transference.
+22. **Isekai progression fantasy is the tone.** The player should feel as though they are gradually learning, mastering, and eventually exploiting the hidden rules of a new fantasy world.
 
 ## Repository map
 
@@ -38,6 +39,7 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 ### Character & Progression Systems
 
 - [`docs/ORIGINS_SKILLS_SYSTEM_PERCEPTION.md`](docs/ORIGINS_SKILLS_SYSTEM_PERCEPTION.md) — multiple Origin paths, the Threshold, Skills, System Comprehension, perception lenses, starting vulnerability, and gradual Codex discovery.
+- [`docs/STARTING_ORIGINS_AND_OPENINGS.md`](docs/STARTING_ORIGINS_AND_OPENINGS.md) — playable Origin set, previous-world Backgrounds, Threshold variants, opening scenarios, adaptive first manifestations, and convergence into the first shared region.
 - [`docs/PROGRESSION.md`](docs/PROGRESSION.md) — master progression model and long-term power arc.
 - [`docs/SKILL_MASTERY.md`](docs/SKILL_MASTERY.md) — persistent skill use, mastery tiers, branching upgrades, and hidden evolutions.
 - [`docs/EQUIPMENT_PROGRESSION.md`](docs/EQUIPMENT_PROGRESSION.md) — equipment mastery, learned techniques, affixes, crafting, and item evolution.
@@ -63,21 +65,42 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 
 ## Current design version
 
-**v0.2.11 — Origins, Skills & System Perception**
+**v0.2.12 — Playable Origins & Opening Scenarios**
 
-The project now supports multiple Origin paths that can alter the player's arrival, starting Skills, early combat competence, narrative opportunities, divine relationships, System Comprehension, and how progression is interpreted.
+The first concrete Origin package now contains five standard paths and one later-unlocked anomaly path:
 
-The **Threshold** is the structural in-between space of Transference, but it does not need to appear identically for every Origin. A character may meet a god, a representative, an administrative world function, an unknowable presence, a symbolic mechanism, or remember nothing at all.
+1. **Accidental Transfer — The Stranded** — survival-heavy, low-information, high-freedom start.
+2. **Ritual Summon — The Invited** — institution-supported, politically constrained, moderately system-aware start.
+3. **Reincarnated — The Second Life** — culturally integrated start with a slower distinction between native Skills and the deeper Codex.
+4. **Failed Hero Summoning — The Rejected** — unstable system information, poor circumstances, and strong mystery hooks.
+5. **Divine Bargain — The Contracted** — explicit supernatural advantage tied to obligations, restrictions, or divine attention.
+6. **System Anomaly — The Unregistered** — later-unlocked Origin intended to expose or distort major system mysteries.
 
-**Skills** are now formally broader than cards. They represent persistent capability and can unlock or improve Weapon Arts, Codex Manifestations, class qualifications, narrative options, and noncombat expertise.
+Origin and previous-world **Background** are separate layers: Origin answers *how you entered this world*; Background answers *who you were before it happened*.
 
-**System Comprehension** is a progression layer that can change the information visible to the player. The HUD itself may expand from vague sensory feedback into explicit values, statuses, mastery information, hidden prerequisites, Authority signatures, and normally inaccessible system metadata.
+The first manifestation is selected from an adaptive candidate pool based on Origin, Background, starting Skills, and player behavior. The player's earliest card should therefore communicate that **the system noticed what they actually did**.
 
-The Divine Codex is intended to reveal itself gradually. Early play can look like a grounded action RPG built around movement, survival, weapon handling, and limited Weapon Arts before the player's first manifestation exposes the deeper system.
+## First Playable Origin Prototype
+
+The first implementation should fully build only two prologues:
+
+- **Accidental Transfer — The Stranded**
+- **Ritual Summon — The Invited**
+
+They test opposite onboarding assumptions while sharing the same underlying game data:
+
+- low-information vs system-aware presentation
+- survival vs structured training
+- no support vs institutional support
+- reactive Codex discovery vs expected/observed Codex discovery
+
+Both converge into the same frontier settlement and first dungeon without erasing Origin-specific consequences.
+
+Open multiplayer begins after the personal prologue reaches this shared regional structure.
 
 ## Combat Architecture
 
-Combat now uses three formal layers:
+Combat uses three formal layers:
 
 1. **Foundation Actions** — movement, dodge, interaction, traversal, camera/aim, and other reliable non-random actions.
 2. **Weapon Arts** — reliable combat actions defined by weapon family, class discipline, Skills, equipment mastery, and item evolution.
@@ -87,11 +110,9 @@ Prototype formula:
 
 **Weapon Family + Class Discipline + Equipment Mastery = Weapon Moveset**
 
-Prototype direction also includes up to two weapon sets and testing whether deck cycling can provide much of the ability-tempo function normally handled by cooldowns.
-
 ## Opening Experience
 
-The first roughly 30 minutes should teach a shared mechanical spine while allowing Origin-specific scenarios:
+The first roughly 30–60 minutes teach a shared mechanical spine through Origin-specific scenarios:
 
 1. movement and camera
 2. interaction
@@ -102,103 +123,60 @@ The first roughly 30 minutes should teach a shared mechanical spine while allowi
 7. reaching civilization, shelter, or another stable objective
 8. realizing that the player's understanding of the world is incomplete
 
-Different Origins can present this through ritual summoning, reincarnation, accidental wilderness arrival, a failed hero summoning, a divine bargain, or other paths.
-
 ## Visual Direction
 
 **Ground the world before breaking it.**
 
 The visual target remains **stylized anime fantasy with softly stylized PBR environments and increasingly supernatural visual escalation**.
 
-Broad progression:
-
-**Practical fantasy → refined supernatural craft → legendary manifestations → divine intervention → Authority-driven reality distortion.**
-
 ## Narrative Structure
 
-The game uses a **sandbox-first living world with a discoverable core mystery**.
-
-Narrative layers:
-
-1. Core Mystery
-2. Regional Storylines
-3. Character & Companion Arcs
-4. Emergent World Stories
-5. Player Campaign History
-
-The Core Mystery advances mainly through Story Revelations rather than a rigid quest chain, and there is no permanent global apocalypse timer forcing continuous main-story engagement.
+The game uses a **sandbox-first living world with a discoverable core mystery**. The Core Mystery advances mainly through Story Revelations rather than a rigid quest chain, and there is no permanent global apocalypse timer forcing continuous main-story engagement.
 
 ## Narrative Escalation
 
 **Arrival → Adventurer → Heroic → Sovereign → Mythic**
 
-Scale rises from:
-
-**Personal survival → regional conflicts → major faction/divine attention → nations and system control → gods, Authorities, Transference, and world laws.**
-
 ## Living World Principle
 
 **The world remembers what the player did, who benefited, who suffered, and how much time has passed.**
-
-Faction reputation remains independent by organization, and morality emerges from persistent behavior and concrete consequences rather than a universal Good/Evil meter.
 
 ## Central Lore Mystery
 
 **The gods gave me this system → the gods only control parts of it → the system predates the known gods → the Endless Dungeon and soul transfer are part of the same ancient architecture → why are souls crossing worlds at all?**
 
-Mechanics should increasingly become lore as the player gains knowledge and System Comprehension.
-
 ## Multiplayer Direction
 
 **World persistence belongs to the host. Character persistence belongs to each player.**
 
-A host loads their persistent timeline and up to five other players may join with their own characters. Visitors participate in the host's narrative reality while retaining their own character progression, Origin, Skills, perception lens, and secured rewards.
-
-Initial multiplayer uses player-hosted listen servers, with architecture intended to remain compatible with dedicated servers later.
+Visitors retain their Origin, Background, Skills, perception lens, character progression, and secured rewards while participating in the host's timeline.
 
 ## Power Curve
 
 **Vulnerable Adventurer → Competent Specialist → Synergy-Driven Veteran → System-Breaking Legendary Build**
 
-Early enemies should be dangerous and resources meaningful. Midgame opens multiclassing, equipment evolution, crafting, companions, faction influence, deeper Skills, and increasingly elaborate engines. Endgame rewards extreme specialization, rare classes, legendary equipment, political influence, unusual interactions, Authorities, and mastery of hidden systems.
-
-## Design status labels
-
-- **Core Rule** — foundational unless deliberately changed.
-- **Canon Lore** — current setting truth unless deliberately retconned.
-- **Narrative Rule** — foundational structure for authored and emergent story content.
-- **Visual Direction** — production-facing visual target subject to prototype validation where noted.
-- **Prototype Default** — chosen for testing; expected to change.
-- **Content Guideline** — direction for future content design.
-- **Technical Direction** — intended implementation architecture subject to prototype validation.
-- **Open Question** — intentionally unresolved.
-
-## Next prototype target — Opening + Combat Proof of Concept
+## Next prototype target — Two-Origin Opening + Combat Proof of Concept
 
 Before the full content vertical slice, validate:
 
+- Accidental Transfer prologue
+- Ritual Summon prologue
+- shared frontier-settlement convergence
 - third-person movement
 - keyboard and controller input
-- listen-server hosting and 1–6 player connection support
-- one stylized character and grounded environment
-- deliberately limited starting HUD
-- two test Origin/perception profiles
-- one starting Skill
+- deliberately different starting HUD/perception profiles
+- previous-world Background modifier
+- one starting Skill per profile
+- behavior-driven first Skill recognition
 - one weapon family with a small Weapon Art package
-- five manifested hand slots that are initially hidden/unavailable
-- one first-manifestation narrative reveal
-- HUD/System Comprehension expansion after that reveal
-- one melee manifestation
-- one projectile Spell
-- one defensive Reaction
-- one status effect
-- one cross-player combo
-- one weapon-set swap test
-- one evolved-equipment action change
-- one prototype Authority-style reality distortion
+- initially hidden five-slot Codex hand
+- adaptive first-manifestation reveal
+- System Comprehension/HUD expansion
+- listen-server multiplayer unlocking after prologue convergence
+- one shared first dungeon
 - save/reload and join-in-progress
 
-The goal is to prove that **action combat, weapon identity, gradual system discovery, deck constraints, multiplayer, persistence, and visual/lore presentation all feel like one game** before scaling production.
+The goal is to prove that **different isekai beginnings can produce distinct first impressions while still converging cleanly into one multiplayer action-RPG system**.
 
 ## Following gameplay target — v0.3.0 Combat Prototype
 
