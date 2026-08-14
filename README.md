@@ -9,17 +9,18 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 3. **Cards are manifestations of the soul.** The card interface represents the character's permitted interactions with the laws of the world through a soul-bound Active Codex.
 4. **The world remembers.** Time passes, factions act, settlements change, and consequences can return much later in the campaign.
 5. **Morality emerges from behavior.** The game supports heroic, villainous, pragmatic, revolutionary, tyrannical, and mixed paths without reducing them to one Good/Evil meter.
-6. **Classes are modular disciplines.** Characters combine class card pools rather than being permanently locked into one class identity.
-7. **Mastery changes abilities.** Skills and equipment can improve, branch, and evolve through use, training, accomplishments, and discoveries.
-8. **Runs create temporary power; the world creates permanent possibility.** Dungeon upgrades reset, while mastery, treasures, achievements, town systems, companions, knowledge, relationships, and discoveries persist.
-9. **Depth changes rules, not only numbers.** Infinite dungeon scaling adds affixes, hazards, mutations, and Dungeon Laws alongside controlled numerical scaling.
-10. **Discovery is progression.** Hidden classes, hybrid cards, titles, achievements, equipment evolutions, recipes, divine permissions, and dungeon phenomena reward experimentation.
-11. **Knowledge is power.** Bestiary research and world knowledge reveal enemy behavior, weaknesses, loot, recipes, hidden interactions, and eventually the true nature of game systems.
-12. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without erasing developed characters.
-13. **Multiplayer should feel like visiting another adventurer's world.** World persistence and timeline belong to the host; persistent characters belong to individual players.
-14. **The power curve escalates dramatically.** The intended arc moves from vulnerable adventurer to specialized veteran to legendary system-breaking build.
-15. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper metaphysical infrastructure behind the Divine Codex and Transference.
-16. **Isekai progression fantasy is the tone.** The player should feel as though they are learning and eventually exploiting the hidden rules of a new fantasy world.
+6. **The story is discovered, not merely followed.** A central mystery exists, but players uncover it through revelations, exploration, factions, companions, and world state rather than a rigid main-quest chain.
+7. **Classes are modular disciplines.** Characters combine class card pools rather than being permanently locked into one class identity.
+8. **Mastery changes abilities.** Skills and equipment can improve, branch, and evolve through use, training, accomplishments, and discoveries.
+9. **Runs create temporary power; the world creates permanent possibility.** Dungeon upgrades reset, while mastery, treasures, achievements, town systems, companions, knowledge, relationships, and discoveries persist.
+10. **Depth changes rules, not only numbers.** Infinite dungeon scaling adds affixes, hazards, mutations, and Dungeon Laws alongside controlled numerical scaling.
+11. **Discovery is progression.** Hidden classes, hybrid cards, titles, achievements, equipment evolutions, recipes, divine permissions, and dungeon phenomena reward experimentation.
+12. **Knowledge is power.** Bestiary research and world knowledge reveal enemy behavior, weaknesses, loot, recipes, hidden interactions, and eventually the true nature of game systems.
+13. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without erasing developed characters.
+14. **Multiplayer should feel like visiting another adventurer's world.** World persistence and timeline belong to the host; persistent characters belong to individual players.
+15. **The power curve escalates dramatically.** The intended arc moves from vulnerable adventurer to specialized veteran to legendary system-breaking build.
+16. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper metaphysical infrastructure behind the Divine Codex and Transference.
+17. **Isekai progression fantasy is the tone.** The player should feel as though they are learning and eventually exploiting the hidden rules of a new fantasy world.
 
 ## Repository map
 
@@ -38,10 +39,11 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 - [`docs/COMPANIONS.md`](docs/COMPANIONS.md) — companion Support Decks, party roles, recruitment, progression, injuries, and solo alternatives.
 - [`docs/KNOWLEDGE_AND_DEFEAT.md`](docs/KNOWLEDGE_AND_DEFEAT.md) — Bestiary progression, world knowledge, wounds, secured loot, extraction, and recovery runs.
 
-### Lore & World Systems
+### Lore, Narrative & World Systems
 
 - [`docs/DIVINE_CODEX_LORE.md`](docs/DIVINE_CODEX_LORE.md) — Divine Codex, Transference, soul manifestations, gods, Authorities, native/otherworlder perception, and the central metaphysical mystery.
 - [`docs/LIVING_WORLD.md`](docs/LIVING_WORLD.md) — world time, faction reputation, behavioral tendencies, consequence records, faction projects, evolving settlements, world eras, and hero/villain paths.
+- [`docs/NARRATIVE_STRUCTURE.md`](docs/NARRATIVE_STRUCTURE.md) — Core Mystery, regional storylines, companion arcs, emergent world stories, player campaign history, Story Revelations, and era-based narrative escalation.
 - [`docs/DUNGEONS.md`](docs/DUNGEONS.md) — dungeon generation and infinite depth framework.
 - [`docs/TOWN.md`](docs/TOWN.md) — persistent town and building progression framework.
 
@@ -54,27 +56,39 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 
 ## Current design version
 
-**v0.2.7 — Living World, Factions & Consequences**
+**v0.2.8 — Narrative Structure**
 
-The persistent host world is now formally treated as its own progression system. Meaningful actions advance time, factions pursue projects, settlements can develop or decline, companions remember behavior, and important decisions can create delayed consequences.
+The project now uses a **sandbox-first living world with a discoverable core mystery**.
 
-Faction reputation is independent by organization rather than collapsed into a global morality score. Hidden behavioral tendencies may track patterns such as Mercy/Ruthlessness, Order/Freedom, Selflessness/Ambition, and Sacred/Profane, but choices must have tangible consequences rather than existing to fill meters.
+Narrative is organized into five layers:
 
-Heroic, villainous, pragmatic, revolutionary, tyrannical, and mixed-character routes are all supported. Villainous play is intended to unlock distinct content rather than act as a reduced-content failure path.
+1. **Core Mystery** — the truth behind Transference, the Divine Codex, Authorities, Dungeon Laws, the gods, and the Endless Dungeon.
+2. **Regional Storylines** — political, social, religious, monster, economic, and magical conflicts that can resolve differently or continue without the player.
+3. **Character & Companion Arcs** — persistent personal stories shaped by relationships, world state, behavior, factions, and time.
+4. **Emergent World Stories** — consequences created by simulation and interacting world-state systems.
+5. **Player Campaign History** — the unique combination of all of the above plus the player's own goals and decisions.
 
-The host's timeline defines multiplayer world reality. Visiting another player can therefore expose dramatically different versions of familiar towns, NPCs, factions, wars, and alliances.
+The Core Mystery advances primarily through **Story Revelations** rather than a rigid main-quest chain. The player should feel that they are discovering the plot.
 
-**Unreal Engine 5** remains the provisional engine choice pending a small networking/combat validation prototype.
+There is no permanent global apocalypse timer forcing continuous main-story engagement. Regional crises and faction projects may advance or resolve with time, while the deeper Core Mystery escalates through World Era, discoveries, major world transitions, and deliberate engagement.
+
+## Narrative Escalation
+
+The provisional campaign eras are:
+
+**Arrival → Adventurer → Heroic → Sovereign → Mythic**
+
+Narrative scale rises with the player's influence:
+
+**Personal survival → regional conflicts → major faction/divine attention → nations and system control → gods, Authorities, Transference, and world laws.**
+
+The Core Mystery does not assume a heroic protagonist. Characters may seek the truth to protect the world, gain power, overthrow gods, preserve divine authority, seize the system, stop Transference, exploit it, or pursue other emergent goals.
 
 ## Living World Principle
 
 **The world remembers what the player did, who benefited, who suffered, and how much time has passed.**
 
-Long-form influence can escalate through provisional eras:
-
-**Arrival → Adventurer → Heroic → Sovereign → Mythic**
-
-The scale of consequence should grow alongside the character: from individual lives and villages to nations, gods, Authorities, and eventually world rules.
+Faction reputation remains independent by organization, and morality emerges from persistent behavior and concrete consequences rather than a universal Good/Evil meter.
 
 ## Central Lore Mystery
 
@@ -88,7 +102,7 @@ Mechanics should increasingly become lore as the player gains knowledge.
 
 **World persistence belongs to the host. Character persistence belongs to each player.**
 
-A host loads their persistent timeline and up to five other players may join with their own characters. Visitors participate in the host's current narrative reality without replacing their own world state. Secured character rewards and personal progression travel back with them.
+A host loads their persistent timeline and up to five other players may join with their own characters. Visitors participate in the host's current narrative reality without replacing their own world state. Visiting characters may provide narrative keys based on their Origins, Classes, Skills, Titles, Authorities, Knowledge, or faction histories where appropriate.
 
 Initial multiplayer uses player-hosted listen servers. The architecture should remain compatible with dedicated servers later.
 
@@ -104,6 +118,7 @@ Early enemies should be dangerous and resources meaningful. Midgame should open 
 
 - **Core Rule** — foundational unless deliberately changed in a patch.
 - **Canon Lore** — current setting truth unless deliberately retconned in a later patch.
+- **Narrative Rule** — foundational structure for authored and emergent story content.
 - **Prototype Default** — chosen so the game can be tested; expected to change.
 - **Content Guideline** — direction for future card/content design.
 - **Technical Direction** — intended implementation architecture that remains subject to prototype validation.
