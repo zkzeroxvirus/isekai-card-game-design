@@ -10,17 +10,18 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 4. **The world remembers.** Time passes, factions act, settlements change, and consequences can return much later in the campaign.
 5. **Morality emerges from behavior.** The game supports heroic, villainous, pragmatic, revolutionary, tyrannical, and mixed paths without reducing them to one Good/Evil meter.
 6. **The story is discovered, not merely followed.** A central mystery exists, but players uncover it through revelations, exploration, factions, companions, and world state rather than a rigid main-quest chain.
-7. **Classes are modular disciplines.** Characters combine class card pools rather than being permanently locked into one class identity.
-8. **Mastery changes abilities.** Skills and equipment can improve, branch, and evolve through use, training, accomplishments, and discoveries.
-9. **Runs create temporary power; the world creates permanent possibility.** Dungeon upgrades reset, while mastery, treasures, achievements, town systems, companions, knowledge, relationships, and discoveries persist.
-10. **Depth changes rules, not only numbers.** Infinite dungeon scaling adds affixes, hazards, mutations, and Dungeon Laws alongside controlled numerical scaling.
-11. **Discovery is progression.** Hidden classes, hybrid cards, titles, achievements, equipment evolutions, recipes, divine permissions, and dungeon phenomena reward experimentation.
-12. **Knowledge is power.** Bestiary research and world knowledge reveal enemy behavior, weaknesses, loot, recipes, hidden interactions, and eventually the true nature of game systems.
-13. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without erasing developed characters.
-14. **Multiplayer should feel like visiting another adventurer's world.** World persistence and timeline belong to the host; persistent characters belong to individual players.
-15. **The power curve escalates dramatically.** The intended arc moves from vulnerable adventurer to specialized veteran to legendary system-breaking build.
-16. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper metaphysical infrastructure behind the Divine Codex and Transference.
-17. **Isekai progression fantasy is the tone.** The player should feel as though they are learning and eventually exploiting the hidden rules of a new fantasy world.
+7. **Visual progression mirrors character progression.** The world begins grounded and readable, while equipment, magic, dungeons, divine phenomena, and Authorities become increasingly supernatural as the player grows.
+8. **Classes are modular disciplines.** Characters combine class card pools rather than being permanently locked into one class identity.
+9. **Mastery changes abilities.** Skills and equipment can improve, branch, and evolve through use, training, accomplishments, and discoveries.
+10. **Runs create temporary power; the world creates permanent possibility.** Dungeon upgrades reset, while mastery, treasures, achievements, town systems, companions, knowledge, relationships, and discoveries persist.
+11. **Depth changes rules, not only numbers.** Infinite dungeon scaling adds affixes, hazards, mutations, and Dungeon Laws alongside controlled numerical scaling.
+12. **Discovery is progression.** Hidden classes, hybrid cards, titles, achievements, equipment evolutions, recipes, divine permissions, and dungeon phenomena reward experimentation.
+13. **Knowledge is power.** Bestiary research and world knowledge reveal enemy behavior, weaknesses, loot, recipes, hidden interactions, and eventually the true nature of game systems.
+14. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without erasing developed characters.
+15. **Multiplayer should feel like visiting another adventurer's world.** World persistence and timeline belong to the host; persistent characters belong to individual players.
+16. **The power curve escalates dramatically.** The intended arc moves from vulnerable adventurer to specialized veteran to legendary system-breaking build.
+17. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper metaphysical infrastructure behind the Divine Codex and Transference.
+18. **Isekai progression fantasy is the tone.** The player should feel as though they are learning and eventually exploiting the hidden rules of a new fantasy world.
 
 ## Repository map
 
@@ -47,8 +48,9 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 - [`docs/DUNGEONS.md`](docs/DUNGEONS.md) — dungeon generation and infinite depth framework.
 - [`docs/TOWN.md`](docs/TOWN.md) — persistent town and building progression framework.
 
-### Technical Systems
+### Visual & Technical Systems
 
+- [`docs/VISUAL_DIRECTION.md`](docs/VISUAL_DIRECTION.md) — stylized anime-fantasy rendering, character direction, equipment evolution, VFX hierarchy, Divine Codex UI, faction/settlement visual language, monster readability, camera, and production guardrails.
 - [`docs/TECHNICAL_DIRECTION.md`](docs/TECHNICAL_DIRECTION.md) — Unreal Engine direction, 1–6 player listen-server co-op, world/character ownership, 3D card abilities, persistence, instancing, and multiplayer risks.
 - [`docs/GLOSSARY.md`](docs/GLOSSARY.md) — controlled game terminology.
 - [`docs/OPEN_QUESTIONS.md`](docs/OPEN_QUESTIONS.md) — unresolved design decisions and prototype questions.
@@ -56,9 +58,31 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 
 ## Current design version
 
-**v0.2.8 — Narrative Structure**
+**v0.2.9 — Visual Direction**
 
-The project now uses a **sandbox-first living world with a discoverable core mystery**.
+The project now has a formal visual target: **stylized anime fantasy with grounded environments and increasingly supernatural visual escalation**.
+
+Rendering is provisionally defined as **softly stylized PBR** rather than full photorealism or full cel shading. Characters use anime-influenced proportions, faces, silhouettes, and expression, while environments and materials remain comparatively grounded so magic, evolved equipment, divine phenomena, and Authorities have strong visual contrast.
+
+The Divine Codex is visually treated as a supernatural interface rather than a literal physical card deck. Combat VFX escalate by supernatural hierarchy, but multiplayer readability takes priority over spectacle.
+
+Equipment progression, faction influence, town development, monster variants, and host-world timeline divergence should all be physically visible in the world.
+
+**Unreal Engine 5** remains the provisional engine choice pending technical and visual prototype validation.
+
+## Visual Direction
+
+**Ground the world before breaking it.**
+
+The broad escalation is:
+
+**Practical fantasy → refined supernatural craft → legendary manifestations → divine intervention → Authority-driven reality distortion.**
+
+The visual prototype should prove that anime-influenced characters, softly stylized PBR environments, supernatural Codex UI, and readable cooperative VFX belong in the same visual world before large-scale asset production begins.
+
+## Narrative Structure
+
+The project uses a **sandbox-first living world with a discoverable core mystery**.
 
 Narrative is organized into five layers:
 
@@ -68,9 +92,7 @@ Narrative is organized into five layers:
 4. **Emergent World Stories** — consequences created by simulation and interacting world-state systems.
 5. **Player Campaign History** — the unique combination of all of the above plus the player's own goals and decisions.
 
-The Core Mystery advances primarily through **Story Revelations** rather than a rigid main-quest chain. The player should feel that they are discovering the plot.
-
-There is no permanent global apocalypse timer forcing continuous main-story engagement. Regional crises and faction projects may advance or resolve with time, while the deeper Core Mystery escalates through World Era, discoveries, major world transitions, and deliberate engagement.
+The Core Mystery advances primarily through **Story Revelations** rather than a rigid main-quest chain. There is no permanent global apocalypse timer forcing continuous main-story engagement.
 
 ## Narrative Escalation
 
@@ -119,37 +141,43 @@ Early enemies should be dangerous and resources meaningful. Midgame should open 
 - **Core Rule** — foundational unless deliberately changed in a patch.
 - **Canon Lore** — current setting truth unless deliberately retconned in a later patch.
 - **Narrative Rule** — foundational structure for authored and emergent story content.
+- **Visual Direction** — production-facing visual target that remains subject to prototype validation where noted.
 - **Prototype Default** — chosen so the game can be tested; expected to change.
 - **Content Guideline** — direction for future card/content design.
 - **Technical Direction** — intended implementation architecture that remains subject to prototype validation.
 - **Open Question** — intentionally unresolved.
 
-## Next prototype target — Technical Proof of Concept
+## Next prototype target — Technical + Visual Proof of Concept
 
 Before the full combat-content vertical slice, validate the central digital premise with a small Unreal prototype containing:
 
 - third-person movement
 - listen-server hosting
 - 1–6 player connection support
-- one replicated enemy type
-- one combat arena
+- one stylized player character
+- one grounded fantasy combat environment
+- one replicated enemy type plus one visual variant
 - five test cards represented as Active Codex manifestations
 - replicated hand/deck/discard state
-- one melee Technique
-- one projectile Spell
+- one melee Technique with restrained physical VFX
+- one projectile Spell with readable supernatural VFX
 - one defensive Reaction
 - one status effect
 - one cross-player combo
+- one prototype Authority-style reality-distortion effect
+- one basic equipment set plus one evolved-equipment visual
+- one faction/environment visual motif
+- keyboard and controller glyph presentation
 - one loot pickup
 - one secure/extract checkpoint
 - save/reload
 - join-in-progress
 
-The goal is to prove that **3D action, deck constraints, replication, persistence, lore presentation, and co-op are coherent together** before scaling content production.
+The goal is to prove that **3D action, deck constraints, replication, persistence, lore presentation, visual identity, and co-op are coherent together** before scaling content and asset production.
 
 ## Following gameplay target — v0.3.0 Combat Prototype
 
-Once the technical proof is sound, the first content vertical slice should support:
+Once the proof of concept is sound, the first content vertical slice should support:
 
 - 3 base classes with distinct class mechanics
 - 2-class multiclassing
