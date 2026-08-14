@@ -6,16 +6,18 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 
 1. **Build a character, not just a deck.** Cards represent learned techniques, spells, reactions, equipment actions, summons, and other character capabilities.
 2. **The deck defines capability; the player controls execution.** Movement, positioning, aiming, traversal, dodging, and environmental interaction happen directly in 3D space; cards determine which abilities are available.
-3. **Classes are modular disciplines.** Characters combine class card pools rather than being permanently locked into one class identity.
-4. **Mastery changes abilities.** Skills and equipment can improve, branch, and evolve through use, training, accomplishments, and discoveries.
-5. **Runs create temporary power; the world creates permanent possibility.** Dungeon upgrades reset, while mastery, treasures, achievements, town systems, companions, knowledge, and discoveries persist.
-6. **Depth changes rules, not only numbers.** Infinite dungeon scaling adds affixes, hazards, mutations, and Dungeon Laws alongside controlled numerical scaling.
-7. **Discovery is progression.** Hidden classes, hybrid cards, titles, achievements, equipment evolutions, recipes, and dungeon phenomena reward experimentation.
-8. **Knowledge is power.** Bestiary research and world knowledge reveal enemy behavior, weaknesses, loot, recipes, and hidden interactions.
-9. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without erasing developed characters.
-10. **Multiplayer should feel like visiting another adventurer's world.** World persistence belongs to the host; persistent characters belong to individual players.
-11. **The power curve escalates dramatically.** The intended arc moves from vulnerable adventurer to specialized veteran to legendary system-breaking build.
-12. **Isekai progression fantasy is the tone.** The player should feel as though they are learning and eventually exploiting the hidden rules of a new fantasy world.
+3. **Cards are manifestations of the soul.** The card interface represents the character's permitted interactions with the laws of the world through a soul-bound Active Codex.
+4. **Classes are modular disciplines.** Characters combine class card pools rather than being permanently locked into one class identity.
+5. **Mastery changes abilities.** Skills and equipment can improve, branch, and evolve through use, training, accomplishments, and discoveries.
+6. **Runs create temporary power; the world creates permanent possibility.** Dungeon upgrades reset, while mastery, treasures, achievements, town systems, companions, knowledge, and discoveries persist.
+7. **Depth changes rules, not only numbers.** Infinite dungeon scaling adds affixes, hazards, mutations, and Dungeon Laws alongside controlled numerical scaling.
+8. **Discovery is progression.** Hidden classes, hybrid cards, titles, achievements, equipment evolutions, recipes, divine permissions, and dungeon phenomena reward experimentation.
+9. **Knowledge is power.** Bestiary research and world knowledge reveal enemy behavior, weaknesses, loot, recipes, hidden interactions, and eventually the true nature of game systems.
+10. **Failure creates consequences and stories.** Defeat can cause wounds, damaged equipment, injured companions, and lost unsecured loot without erasing developed characters.
+11. **Multiplayer should feel like visiting another adventurer's world.** World persistence belongs to the host; persistent characters belong to individual players.
+12. **The power curve escalates dramatically.** The intended arc moves from vulnerable adventurer to specialized veteran to legendary system-breaking build.
+13. **The gods do not necessarily own the system.** They can influence, administer, exploit, or misunderstand the deeper metaphysical infrastructure behind the Divine Codex and Transference.
+14. **Isekai progression fantasy is the tone.** The player should feel as though they are learning and eventually exploiting the hidden rules of a new fantasy world.
 
 ## Repository map
 
@@ -34,10 +36,14 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 - [`docs/COMPANIONS.md`](docs/COMPANIONS.md) — companion Support Decks, party roles, recruitment, progression, injuries, and solo alternatives.
 - [`docs/KNOWLEDGE_AND_DEFEAT.md`](docs/KNOWLEDGE_AND_DEFEAT.md) — Bestiary progression, world knowledge, wounds, secured loot, extraction, and recovery runs.
 
-### World & Technical Systems
+### Lore & World Systems
 
+- [`docs/DIVINE_CODEX_LORE.md`](docs/DIVINE_CODEX_LORE.md) — Divine Codex, Transference, soul manifestations, gods, Authorities, native/otherworlder perception, and the central metaphysical mystery.
 - [`docs/DUNGEONS.md`](docs/DUNGEONS.md) — dungeon generation and infinite depth framework.
 - [`docs/TOWN.md`](docs/TOWN.md) — persistent town and building progression framework.
+
+### Technical Systems
+
 - [`docs/TECHNICAL_DIRECTION.md`](docs/TECHNICAL_DIRECTION.md) — Unreal Engine direction, 1–6 player listen-server co-op, world/character ownership, 3D card abilities, persistence, instancing, and multiplayer risks.
 - [`docs/GLOSSARY.md`](docs/GLOSSARY.md) — controlled game terminology.
 - [`docs/OPEN_QUESTIONS.md`](docs/OPEN_QUESTIONS.md) — unresolved design decisions and prototype questions.
@@ -45,13 +51,25 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 
 ## Current design version
 
-**v0.2.5 — Digital World & Multiplayer Direction**
+**v0.2.6 — Divine Codex & Isekai Lore Framework**
 
-The game is now provisionally defined as a **third-person 3D PC action-RPG/deckbuilder** with narrative travel, player-hosted 1–6 player cooperative worlds, server-authoritative gameplay, and persistent player characters.
+The card system is now canonically integrated into the setting. Cards are normally non-physical **soul manifestations**, and the equipped deck represents the character's **Active Codex**: the subset of known abilities attuned for reliable manifestation.
 
-**Unreal Engine 5** is the provisional engine choice pending a small networking/combat validation prototype.
+Otherworlders may perceive this supernatural system as an explicit game-like interface because the Transference translates metaphysical rules into concepts their minds can understand. Native inhabitants participate in the same underlying system without necessarily perceiving literal cards.
+
+The gods can influence and interact with the system but are **not confirmed to have created it**. The Divine Codex, cross-world Transference, Dungeon Laws, Authorities, and Endless Dungeon are now part of a shared long-form mystery.
+
+**Unreal Engine 5** remains the provisional engine choice pending a small networking/combat validation prototype.
 
 Numerical values marked **Prototype Default** remain testing assumptions rather than locked balance targets.
+
+## Central Lore Mystery
+
+The intended progression of understanding is:
+
+**The gods gave me this system → the gods only control parts of it → the system predates the known gods → the Endless Dungeon and soul transfer are part of the same ancient architecture → why are souls crossing worlds at all?**
+
+Mechanics should increasingly become lore as the player gains knowledge.
 
 ## Multiplayer Direction
 
@@ -67,11 +85,12 @@ The intended long-form character fantasy is:
 
 **Vulnerable Adventurer → Competent Specialist → Synergy-Driven Veteran → System-Breaking Legendary Build**
 
-Early enemies should be dangerous and resources meaningful. Midgame should open multiclassing, equipment evolution, crafting, companions, and increasingly elaborate engines. Endgame should reward extreme specialization, rare classes, legendary equipment, treasures, summons, unusual interactions, and mastery of hidden systems.
+Early enemies should be dangerous and resources meaningful. Midgame should open multiclassing, equipment evolution, crafting, companions, and increasingly elaborate engines. Endgame should reward extreme specialization, rare classes, legendary equipment, treasures, summons, unusual interactions, Authorities, and mastery of hidden systems.
 
 ## Design status labels
 
 - **Core Rule** — foundational unless deliberately changed in a patch.
+- **Canon Lore** — current setting truth unless deliberately retconned in a later patch.
 - **Prototype Default** — chosen so the game can be tested; expected to change.
 - **Content Guideline** — direction for future card/content design.
 - **Technical Direction** — intended implementation architecture that remains subject to prototype validation.
@@ -86,7 +105,7 @@ Before the full combat-content vertical slice, validate the central digital prem
 - 1–6 player connection support
 - one replicated enemy type
 - one combat arena
-- five test cards
+- five test cards represented as Active Codex manifestations
 - replicated hand/deck/discard state
 - one melee Technique
 - one projectile Spell
@@ -98,7 +117,7 @@ Before the full combat-content vertical slice, validate the central digital prem
 - save/reload
 - join-in-progress
 
-The goal is to prove that **3D action, deck constraints, replication, persistence, and co-op are coherent together** before scaling content production.
+The goal is to prove that **3D action, deck constraints, replication, persistence, lore presentation, and co-op are coherent together** before scaling content production.
 
 ## Following gameplay target — v0.3.0 Combat Prototype
 
