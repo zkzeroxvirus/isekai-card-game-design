@@ -1,18 +1,28 @@
 # Progression Framework
 
-Version: **v0.1.0**
+Version: **v0.2.0**
 
 ## Progression Principle
 
 The game uses multiple progression layers on different timescales. These layers should reinforce one another without collapsing into a single universal power score.
+
+The desired fantasy arc is:
+
+**Vulnerable Adventurer → Competent Specialist → Synergy-Driven Veteran → System-Breaking Legendary Build**
+
+Early progression should feel grounded and dangerous. Midgame progression should emphasize equipment, skill evolution, multiclassing, crafting, and party composition. Endgame progression should emphasize extreme specialization, rare classes, legendary equipment, treasures, summons, unusual rule interactions, and mastery of the world's systems.
 
 | Layer | Persistence | Purpose |
 |---|---|---|
 | Combat Resources | Battle | Tactical choices |
 | Run Deck / Blessings | Run | Roguelite power curve |
 | Character Build | Persistent | Identity |
-| Class Mastery | Persistent | Unlock options |
-| Equipment | Persistent | Build tuning |
+| Skill Mastery | Persistent | Ability refinement and evolution |
+| Class Mastery | Persistent | Discipline development |
+| Equipment Mastery | Persistent | Gear identity and learned techniques |
+| Guild Rank | Persistent | Institutional access and reputation |
+| Companions | Persistent | Party strategy and relationships |
+| Knowledge / Bestiary | Persistent | Learn the world's hidden rules |
 | Treasures | Persistent | Rule-changing rewards |
 | Achievements | Persistent | Discovery and goals |
 | Titles | Persistent | Milestones and identity |
@@ -31,8 +41,24 @@ Character progression may unlock:
 - origin evolution
 - title slots
 - specialization choices
+- companion capacity
 
 Raw stat growth should remain controlled so build synergy matters more than level alone.
+
+## Skill Mastery
+
+Individual skills may improve through use, training, accomplishments, and discoveries.
+
+Skill Mastery may unlock:
+
+- alternate card upgrades
+- branching evolutions
+- associated passives
+- new Skill Family techniques
+- multiclass interactions
+- hidden evolutions
+
+Skill Mastery is defined in [`SKILL_MASTERY.md`](SKILL_MASTERY.md).
 
 ## Class Mastery
 
@@ -45,7 +71,8 @@ Possible mastery rewards:
 - class passives
 - signature cards
 - hybrid cards
-- cosmetic identity
+- equipment permissions
+- specialization access
 - hidden-class prerequisites
 
 ### Prototype Tier Structure
@@ -56,7 +83,70 @@ Possible mastery rewards:
 - **Master** — signatures and hybrid access
 - **Transcendent** — rare endgame mastery rewards
 
-Exact XP requirements are intentionally undefined in v0.1.0.
+Exact XP requirements remain intentionally undefined.
+
+## Equipment Progression
+
+Equipment has its own persistent mastery and evolution system.
+
+Gear may:
+
+- grant cards
+- teach permanent skill knowledge
+- gain affixes
+- unlock passives
+- evolve after thematic conditions
+- interact with class and Skill Mastery
+
+See [`EQUIPMENT_PROGRESSION.md`](EQUIPMENT_PROGRESSION.md).
+
+## Guild Progression
+
+Guild Rank measures proven adventuring status, not raw combat level.
+
+It may unlock:
+
+- contracts
+- permits
+- trainers
+- companions
+- merchants
+- regional access
+- elite hunts
+- social recognition
+
+See [`GUILD_AND_RANK.md`](GUILD_AND_RANK.md).
+
+## Companion Progression
+
+Companions provide small Support Decks and persistent party-building choices.
+
+Their growth may include:
+
+- new support cards
+- equipment
+- personal quests
+- relationship milestones
+- injuries and recovery
+- role specialization
+
+See [`COMPANIONS.md`](COMPANIONS.md).
+
+## Knowledge Progression
+
+Bestiary and world knowledge survive failure and reveal mechanics over time.
+
+Knowledge can reveal:
+
+- enemy intent patterns
+- weaknesses and resistances
+- loot information
+- boss phases
+- hidden interactions
+- recipes
+- evolution clues
+
+See [`KNOWLEDGE_AND_DEFEAT.md`](KNOWLEDGE_AND_DEFEAT.md).
 
 ## Run Progression
 
@@ -83,20 +173,14 @@ Achievement rewards can include:
 - treasures
 - titles
 - hidden classes
+- skill evolutions
+- equipment evolutions
 - town NPCs
 - recipes
 - cosmetics
 - new dungeon events
 
 Achievement conditions should encourage unusual play rather than routine grinding whenever possible.
-
-Example concepts:
-
-- defeat a boss without taking damage
-- apply an extreme status stack
-- win without Attack-tagged cards
-- defeat an enemy far above expected depth
-- complete a dungeon using two normally conflicting classes
 
 ## Titles
 
@@ -108,6 +192,7 @@ Titles may be:
 - small passive modifiers
 - prerequisites for hidden content
 - keys to special events
+- clues to unusual progression paths
 
 Avoid making all titles mandatory stat upgrades; otherwise they become equipment by another name.
 
@@ -119,16 +204,7 @@ Treasures are persistent major rewards, usually acquired from bosses, milestones
 
 Equipment primarily modifies the character. **Treasures may modify rules.**
 
-Examples:
-
-- first Common card each combat is copied
-- Burn can exceed its normal cap
-- first Technique each turn costs less
-- once per run, reverse a failed choice
-
-### Prototype Default
-
-Characters have a limited number of active Treasure slots. Additional treasures remain in the Vault and can be swapped in Town.
+Characters have limited active Treasure slots. Additional treasures remain in the Vault and can be swapped in Town.
 
 This preserves build choice and prevents permanent power from becoming an unchecked pile of bonuses.
 
@@ -140,7 +216,10 @@ Requirements may reference:
 
 - achievements
 - titles
+- Skill Mastery
 - class mastery combinations
+- equipment mastery
+- Guild Rank or certification
 - boss kills
 - rare events
 - unusual combat behavior
@@ -163,6 +242,11 @@ At high progression, rewards should increasingly emphasize:
 - prestige cosmetics
 - difficult unlocks
 - challenge modifiers
-- new dungeon laws
+- new Dungeon Laws
+- deeper mastery branches
+- legendary equipment evolutions
+- hidden classes
 
-This keeps earlier content mechanically relevant while still preserving the progression-fantasy feeling.
+## Golden Progression Rule
+
+**Levels expand capability. Mastery deepens identity. Knowledge reveals possibilities. Synergies create power.**
