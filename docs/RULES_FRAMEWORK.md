@@ -1,16 +1,16 @@
 # Core Rules Framework
 
-Version: **v0.2.20**
+Version: **v0.2.21**
 
 ## 1. Game Structure
 
-The game is a persistent 3D action-RPG/deckbuilder built around exploration, combat, discovery, town life, character development, and consequence.
+The game is a persistent 3D action-RPG/deckbuilder built around exploration, combat, discovery, civilian life, character development, and consequence.
 
 The macro loop is:
 
-**Explore / Accept Opportunity → Prepare Character & Party → Travel / Enter Dangerous Space → Fight, Discover, Negotiate, Investigate, Loot → Secure / Retreat / Complete Objective → Resolve Consequences → Develop Character & World → Continue**
+**Explore / Accept Opportunity → Prepare Character & Party → Travel / Work / Enter Dangerous Space → Fight, Discover, Negotiate, Investigate, Trade, Build or Practice → Secure / Retreat / Complete Objective → Resolve Consequences → Develop Character & World → Continue**
 
-Hearthcross and later settlements are persistent places rather than abstract menu phases.
+Settlements are persistent places rather than abstract menu phases.
 
 Dungeons are important expedition spaces, but the game is not limited to a strict Town → Dungeon → Town roguelite loop.
 
@@ -25,7 +25,7 @@ The game organizes its many systems into six player-facing domains:
 3. **Role** — Jobs
 4. **Gear** — Equipment, mastery, evolution
 5. **Discovery** — Knowledge, hidden qualifications, System Comprehension
-6. **World** — factions, relationships, settlement state, narrative consequences
+6. **World** — relationships, reputation, factions, economy, citizenship, property, settlements, narrative consequences
 
 New mechanics should fit one of these domains whenever possible.
 
@@ -53,7 +53,10 @@ A character may contain:
 - selected Titles / recognitions
 - Knowledge records
 - System Comprehension
-- relationships and faction history
+- relationships
+- professional history
+- public / group reputation evidence
+- legal identity/status where relevant
 - persistent unlocks
 
 ### Prototype Attributes
@@ -93,26 +96,11 @@ Reliable combat actions shaped by:
 
 **Weapon Family + Discipline + Equipment Mastery = Weapon Moveset**
 
-Weapon Arts include attacks, guards, counters, movement attacks, setup actions, and other dependable techniques appropriate to the weapon and Discipline.
-
 ### Codex Manifestations
 
 The Divine Codex supplies rotating extraordinary abilities through a five-slot active hand.
 
-Manifestations may include:
-
-- Techniques
-- Spells
-- Reactions
-- Stances
-- Summons
-- movement abilities
-- counters
-- transformations
-- buffs/debuffs
-- utility
-- miracles
-- advanced rule-manipulation effects
+Manifestations may include Techniques, Spells, Reactions, Stances, Summons, movement abilities, counters, transformations, buffs/debuffs, utility, miracles, and advanced rule-manipulation effects.
 
 Cards should modify and expand the action combat already underway rather than cause the player to stop playing the action game.
 
@@ -155,20 +143,11 @@ They are primarily used on compact Discipline Development Grids.
 
 A mature Discipline may contain roughly **20–35 meaningful nodes**, though the vertical slice should prototype far fewer.
 
-Node families include:
-
-- Connector Nodes
-- Behavior Nodes
-- Build Nodes
-- Keystone Nodes
-- Bridge Nodes
-- Hidden Nodes
+Node families include Connector, Behavior, Build, Keystone, Bridge, and Hidden Nodes.
 
 Most nodes should alter play or reinforce a strategy rather than only add percentages.
 
-Bridge Nodes can connect compatible Discipline branches after meaningful multiclass qualification.
-
-Hidden Nodes can be revealed by behavior, mastery, Jobs, equipment, narrative history, world state, or System Comprehension.
+Development Points are not a universal currency for Skills, Jobs, professions, reputation, citizenship, or settlement progression.
 
 ---
 
@@ -188,13 +167,13 @@ Examples include:
 - Deception
 - Fieldcraft
 
-Skills improve primarily through meaningful use, training, study, teachers, discoveries, accomplishments, and hidden conditions.
+Skills improve primarily through meaningful use, training, study, teachers, discoveries, accomplishments, professional work, and hidden conditions.
 
 Different Skills may branch or evolve, but they should share a consistent mastery language.
 
 ---
 
-## 8. Jobs
+## 8. Jobs and Professions
 
 Jobs represent roles or identities the world/system recognizes the character as fulfilling.
 
@@ -206,10 +185,11 @@ Jobs may provide:
 - Job-related Skills
 - permissions
 - institutional or social recognition
+- professional opportunities
 - evolution routes
 - hidden qualification access
 
-Jobs are rooted in places, cultures, institutions, activities, environments, and secrets.
+Jobs are rooted in places, cultures, institutions, activities, environments, professions, and secrets.
 
 The rule is:
 
@@ -217,7 +197,9 @@ The rule is:
 
 Characters may know multiple Jobs but benefit fully from only a limited number of Active Jobs at once.
 
-Jobs primarily progress through relevant activity rather than generic XP or large point trees.
+A profession-oriented Job should eventually allow the player to perform recognizable work from that profession.
+
+No separate universal profession skill tree or profession-point currency is added.
 
 ---
 
@@ -242,7 +224,7 @@ The Codex is a build-construction system; it does not require a separate giant p
 
 ## 10. Card / Manifestation Zones
 
-The prototype should keep zones as simple as possible.
+Keep zones as simple as possible.
 
 Core zones:
 
@@ -290,8 +272,6 @@ Prototype Disciplines currently use distinct combat resources or rhythm mechanic
 
 These resources should reinforce each Discipline's playstyle rather than exist simply because every class needs a meter.
 
-Future Disciplines do not automatically require unique resources if their gameplay works without one.
-
 ---
 
 ## 13. Equipment
@@ -305,7 +285,7 @@ Equipment may:
 - gain familiarity/mastery
 - gain or modify affixes
 - evolve through thematic conditions
-- interact with Skills, Jobs, Disciplines, and hidden progression
+- interact with Skills, Jobs, Disciplines, professions, and hidden progression
 
 Equipment progression should share a consistent player-facing mastery language rather than proliferating unrelated XP systems.
 
@@ -317,25 +297,9 @@ Knowledge records what the character has learned about the world.
 
 System Comprehension controls how clearly deeper system information can be perceived.
 
-Knowledge can reveal:
+Knowledge can reveal creature behavior, materials, factions, laws, markets, dungeon structures, recipes, profession information, and anomaly patterns.
 
-- creature behavior
-- weaknesses/resistances
-- materials and loot
-- faction information
-- dungeon structures
-- recipes
-- anomaly patterns
-
-System Comprehension can reveal:
-
-- more exact status information
-- hidden qualification feedback
-- compatibility tags
-- hidden Development Grid structures
-- Dungeon Law wording
-- deeper Codex metadata
-- Authority signatures
+System Comprehension can reveal status information, hidden qualification feedback, compatibility tags, hidden Grid structures, Dungeon Law wording, deeper Codex metadata, and Authority signatures.
 
 These belong to one broader player-facing **Discovery** domain.
 
@@ -349,26 +313,18 @@ Hidden qualifications may reference:
 
 - repeated behavior
 - mastery
+- professional history
+- reliability
 - narrative decisions
 - faction relationships
+- reputation
 - world state
 - equipment use/evolution
 - failures and recovery
 - system combinations
 - deliberate refusals or negative conditions
 
-Hidden progression may reveal:
-
-- Skills
-- Jobs
-- Discipline branches
-- Grid Nodes
-- Hybrid Manifestations
-- equipment evolutions
-- Titles
-- Treasures
-- narrative states
-- eventually Authorities
+Hidden progression may reveal Skills, Jobs, Discipline branches, Grid Nodes, Hybrid Manifestations, equipment evolutions, Titles, Treasures, narrative states, and eventually Authorities.
 
 Hidden content should be surprising but interpretable in hindsight.
 
@@ -390,8 +346,6 @@ Rare, limited, major rewards.
 
 **Equipment primarily modifies the character. Treasures may modify rules.**
 
-Treasures should remain uncommon enough to feel exceptional.
-
 ---
 
 ## 17. Exploration, Contracts and World Interaction
@@ -406,67 +360,101 @@ The player can pursue:
 - crafting/training
 - social relationships
 - trade
+- employment
+- profession work
 - investigation
+- construction
+- property
+- business
 - hidden content
 
 Quests should not be the only source of meaningful play.
 
-Jobs, Skills, relationships, Knowledge, and world state should create alternate interactions and outcomes where appropriate.
+Jobs, Skills, relationships, Knowledge, reputation, economy, legal status, and world state should create alternate interactions and outcomes.
 
 ---
 
-## 18. Dungeons and Dangerous Spaces
+## 18. Society, Economy and Civilian Life
 
-Dungeons support:
+Civilian life belongs primarily to the **World** domain and reuses existing systems rather than becoming a disconnected life-sim layer.
 
-- combat
-- route choice
-- hazards
-- discoveries
-- hidden interactions
-- extraction / securing decisions
-- anomalous rules
-- dungeon-specific enemies
-- bosses
-- Story Revelations
+See [`SOCIETY_ECONOMY_AND_REPUTATION.md`](SOCIETY_ECONOMY_AND_REPUTATION.md).
+
+### Economy
+
+Settlements may track compact economic categories such as Food, Materials, Crafted Goods, Medicine, Labor, Housing, Trade Access, Security, and Prosperity.
+
+Economic state may affect stock, prices, work opportunities, construction, migration, faction projects, shortages, and narrative events.
+
+### Stores
+
+Stores react to supply, demand, proprietor wealth, relationships, legality, faction control, production knowledge, and world state rather than functioning as infinite static inventories.
+
+### Work
+
+Accepted work can create deadlines, quality expectations, supplied materials, and social obligations.
+
+Repeated reliability, efficiency, carelessness, abandonment, discretion, or professionalism contributes to reputation.
+
+### Citizenship and Legal Identity
+
+Legal status can affect property rights, licenses, guild access, legal protection, taxes, training, civic participation, and Jobs.
+
+### Property and Construction
+
+Property and construction use defined places, legal permission, materials, labor, money, Skills, Jobs, and time rather than unrestricted free-building by default.
+
+### Business
+
+Advanced civilian progression may allow shops, workshops, clinics, taverns, warehouses, farms, caravan companies, and other ventures where they fit the setting.
+
+Business ownership should create meaningful decisions while supporting delegation.
+
+---
+
+## 19. Reputation and NPC Memory
+
+Reputation is not one global score and is not morality.
+
+Primary scales:
+
+- **Personal Reputation** — what individual NPCs think and remember
+- **Group Reputation** — how institutions, factions, settlements, guilds, professions, clans, and networks regard the player
+- **Public Reputation** — what broader society has heard or believes
+
+Reputation derives from evidence such as completed work, missed commitments, crimes, generosity, rudeness, competence, collateral damage, discretion, mercy, brutality, promises, and betrayal.
+
+The game distinguishes **what happened** from **what people know or believe happened**.
+
+Information may propagate through witnesses, official reports, guilds, merchants, family, rumor, faction networks, clergy, criminal contacts, or other setting-appropriate channels.
+
+Crime should require witnesses, evidence, investigation, or information flow rather than omniscient reputation loss.
+
+NPCs may simultaneously fear, respect, trust, dislike, owe, or professionally rely on the player.
+
+---
+
+## 20. Dungeons and Dangerous Spaces
+
+Dungeons support combat, route choice, hazards, discoveries, hidden interactions, extraction decisions, anomalous rules, enemies, bosses, Story Revelations, and sometimes economically valuable resources or profession opportunities.
 
 Scaling should emphasize new combinations, behaviors, rules, and Dungeon Laws rather than pure HP inflation.
 
-Dungeons should increasingly feel like places governed by discoverable logic.
-
 ---
 
-## 19. Temporary vs Persistent Progression
+## 21. Temporary vs Persistent Progression
 
 Persistent character growth is the main progression fantasy.
 
-Temporary expedition effects may exist, such as:
+Temporary expedition effects may include consumables, blessings, anomaly effects, situational modifications, and unsecured loot.
 
-- consumables
-- temporary blessings
-- anomaly effects
-- situational modifications
-- unsecured loot
+The player should not rebuild an entire temporary character during every expedition.
 
-But the player should not rebuild an entire temporary character during every expedition.
-
-Persistent systems include:
-
-- Skills
-- Discipline investment
-- known manifestations
-- Jobs
-- equipment/mastery/evolution
-- Knowledge
-- System Comprehension
-- relationships
-- faction/world state
-- settlement development
-- rare Treasures
+Persistent systems include Skills, Discipline investment, known manifestations, Jobs, equipment/mastery/evolution, Knowledge, System Comprehension, relationships, reputation evidence, legal/social history, faction/world state, settlement development, and rare Treasures.
 
 ---
 
-## 20. Defeat, Retreat and Extraction
+## 22. Defeat, Retreat and Extraction
 
 Failure should matter without deleting a developed character.
 
@@ -477,6 +465,9 @@ Consequences may include:
 - equipment damage
 - companion injuries
 - contract outcomes
+- missed work or deadlines
+- reputation consequences
+- legal consequences
 - faction consequences
 - world-state changes
 
@@ -486,7 +477,7 @@ Retreat should sometimes be a valid strategic decision.
 
 ---
 
-## 21. Multiplayer
+## 23. Multiplayer
 
 Target: **1–6 player online co-op**.
 
@@ -498,38 +489,48 @@ Core architecture:
 - visiting players participate in the host timeline
 - host departure ends the initial listen-server session rather than attempting full host migration
 
-Combat, VFX, targeting, and encounter design must remain readable with multiple players.
+Host-world state includes local NPC memories, economy, citizenship, property, business ownership, legal investigations, and settlement development.
+
+Portable character state includes appropriate personal progression such as Skills, Jobs, Gear, Codex, and cross-world recognitions where fictionally valid.
 
 ---
 
-## 22. Advanced Rule Manipulation
+## 24. Advanced Rule Manipulation
 
 Covenants / Clauses, Compound Manifestations, Domains / Local Laws, and similar ideas are advanced **Codex Manifestation families**, not new base progression systems.
 
 Authorities sit above ordinary manifestations and represent rare direct permissions over deeper world laws.
 
-Authorities should remain endgame and narratively exceptional.
-
 ---
 
-## 23. Rule Priority
+## 25. Rule Priority
 
 When explicit game rules conflict, use this general hierarchy:
 
 1. Authority or explicitly superior world-law override
 2. Explicit encounter / Dungeon Law
 3. Explicit manifestation / equipment / Treasure effect
-4. Character, Discipline, Job, Skill, or world-state passive
+4. Character, Discipline, Job, Skill, legal/world-state passive
 5. Keyword rule
 6. Core rule
 
 Specific rules override general rules unless a higher-order rule explicitly prevents that override.
 
-Networking authority and anti-cheat validation remain technical requirements independent of fictional rule priority.
+---
+
+## 26. Simulation Guardrail
+
+The game aims for a believable reactive world, not exhaustive simulation.
+
+Simulate detail when it creates meaningful player-facing consequence.
+
+Prefer category-level settlement economy, event-driven prices, generated shop stock, named-NPC memory, abstract background populations, visible construction, and profession activities with decisions.
+
+Avoid mandatory daily chores, excessive appointment micromanagement, dozens of currencies, individual budgets for every NPC, and deep business spreadsheets unless a future feature proves they are fun.
 
 ---
 
-## 24. Golden Design Rules
+## 27. Golden Design Rules
 
 **Build a character, not just a deck.**
 
@@ -539,8 +540,16 @@ Networking authority and anti-cheat validation remain technical requirements ind
 
 **Locations create opportunities. Actions create qualifications. The Codex recognizes the result.**
 
+**Skills determine capability. Jobs recognize role. Reputation records track record. The World provides opportunity.**
+
 **Levels expand capability. Mastery deepens identity. Knowledge reveals possibilities. Synergies create power.**
 
 **Visible progression tells the player what they can pursue. Hidden progression rewards the person they accidentally became.**
+
+**The world remembers what happened, but people only react to what they know or believe.**
+
+**Every profession participates in the same world rather than existing in its own minigame bubble.**
+
+**Simulate causes deeply enough that consequences feel earned; abstract everything the player does not need to meaningfully understand or influence.**
 
 **Do not add a new major system until the vertical slice demonstrates that the existing systems are fun together.**
