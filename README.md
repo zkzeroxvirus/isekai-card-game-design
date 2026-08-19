@@ -8,35 +8,65 @@ Design repository for a progression-fantasy **3D PC action-RPG/deckbuilder** bui
 2. **The deck defines capability; the player controls execution.** Movement, aiming, positioning, dodging, traversal, and interaction happen directly in 3D space.
 3. **Weapons determine how you fight. Cards determine what extraordinary options you can manifest while fighting.**
 4. **Cards are manifestations of the soul.** The Active Codex represents permitted interactions with the laws of the world.
-5. **Skills are broader than cards.** They affect combat, crafting, survival, exploration, social interaction, class qualification, and perception.
+5. **Skills are broader than cards.** They affect combat, crafting, survival, exploration, social interaction, qualification, and perception.
 6. **Jobs describe recognized roles; Disciplines describe combat frameworks.**
 7. **Visible progression tells the player what they can pursue. Hidden progression rewards the person they accidentally became.**
 8. **New places expand the character-build space.** Jobs are embedded in institutions, cultures, environments, activities, and secrets rather than a universal catalogue.
 9. **Settlement growth increases depth before breadth.** A settlement gets better at what it already is rather than becoming a universal progression hub.
 10. **The world remembers.** Choices, faction outcomes, settlement state, and consequences persist.
 11. **Morality emerges from behavior.** The game supports heroic, villainous, pragmatic, revolutionary, tyrannical, and mixed paths without a universal Good/Evil meter.
-12. **Discovery is progression.** Hidden Jobs, Skills, Disciplines, manifestations, equipment evolutions, lore, and system information reward experimentation.
+12. **Discovery is progression.** Hidden Jobs, Skills, Discipline nodes, manifestations, equipment evolutions, lore, and system information reward experimentation.
 13. **Multiclassing should create integrated identities, not larger piles of unrelated abilities.**
 14. **Magic should shape the battlefield, not merely replace arrows with colored projectiles.**
 15. **Failure creates consequences and stories without deleting developed characters.**
 16. **The gods do not necessarily own the system.** The Divine Codex, Transference, Dungeon Laws, and Authorities point toward deeper architecture.
 17. **Isekai progression fantasy is the tone.** The player begins vulnerable, learns the world's hidden rules, and eventually becomes capable of exploiting them.
+18. **Complexity must remain legible.** New mechanics should fit existing player-facing systems unless they have a compelling reason to become a new major system.
 
 ## Current design version
 
-**v0.2.19 — Playable Demo Scope**
+**v0.2.20 — Cohesive Progression Architecture & Isekai Quality Checklist**
 
-Broad feature expansion is now paused while the current systems are developed into one focused vertical slice.
+The project now organizes progression into six player-facing domains:
+
+1. **Character** — Origin, Background, Attributes, Skills
+2. **Combat Build** — Weapon, Discipline, Development Grid, Divine Codex
+3. **Role** — Jobs
+4. **Gear** — Equipment, mastery, evolution
+5. **Discovery** — Knowledge, hidden qualifications, System Comprehension
+6. **World** — factions, relationships, settlement state, narrative consequences
+
+The principal conventional point-spending system is the **Discipline Development Grid**.
+
+Character Levels and selected major accomplishments grant **Development Points**, which are primarily spent on compact Discipline specialization grids. Mature grids may contain roughly 20–35 meaningful nodes; the vertical slice should test only about 6–10 nodes per Discipline.
+
+Skills, Jobs, Gear, and hidden progression retain their own activity-driven identities rather than duplicating the Development Point system.
+
+See:
+
+- [`docs/COHESIVE_PROGRESSION_ARCHITECTURE.md`](docs/COHESIVE_PROGRESSION_ARCHITECTURE.md)
+- [`docs/ISEKAI_GAME_QUALITY_CHECKLIST.md`](docs/ISEKAI_GAME_QUALITY_CHECKLIST.md)
+- [`docs/RULES_FRAMEWORK.md`](docs/RULES_FRAMEWORK.md)
+
+## Project Essence
+
+The target experience is:
+
+> **A choose-your-adventure life inside a complex fantasy world where the player arrives vulnerable, discovers how the world works, builds an identity through actions, and eventually becomes capable of exploiting rules that once constrained them.**
+
+The game should capture the emotional progression of isekai fantasy without requiring a rigid hero narrative.
+
+The player may become an adventurer, specialist, merchant, scholar, criminal, protector, tyrant, explorer, religious figure, system researcher, or something the world has no ordinary name for.
+
+Character history should emerge from what the player does rather than only from what they select during character creation.
+
+## Playable Demo Scope
+
+Broad feature expansion remains paused while the current systems are developed into one focused vertical slice.
 
 The active implementation target is:
 
 **The Stranded → Hearthcross → Greyfen March → The Buried Gate → Gatebound Hob → Gate Recognition → persistent return to Hearthcross**
-
-The demo exists to prove that the project's major ideas work **together**, not merely as separate design documents.
-
-See [`docs/PLAYABLE_DEMO_SCOPE.md`](docs/PLAYABLE_DEMO_SCOPE.md).
-
-## Playable Demo Scope
 
 The first vertical slice should let a player:
 
@@ -47,15 +77,16 @@ The first vertical slice should let a player:
 5. experience an adaptive first Codex manifestation
 6. reach Hearthcross
 7. learn one of three prototype combat Disciplines
-8. discover and activate one frontier Job
-9. resolve one Greyfen conflict with a persistent consequence
-10. enter The Buried Gate
-11. experience route choice, unsecured loot, securing/extraction, and Job/Skill interactions
-12. defeat the Gatebound Hob
-13. witness the first Gate recognition Story Revelation
-14. return to a Hearthcross that acknowledges what happened
+8. make a small number of meaningful Discipline Development Grid choices
+9. discover and activate one frontier Job
+10. resolve one Greyfen conflict with a persistent consequence
+11. enter The Buried Gate
+12. experience route choice, unsecured loot, securing/extraction, and Job/Skill interactions
+13. defeat the Gatebound Hob
+14. witness the first Gate recognition Story Revelation
+15. return to a Hearthcross that acknowledges what happened
 
-Target first complete playthrough: roughly **60–120 minutes**, with replay value from different Backgrounds, Disciplines, first manifestations, Jobs, choices, and dungeon routes.
+Target first complete playthrough: roughly **60–120 minutes**, with replay value from different Backgrounds, Disciplines, first manifestations, Grid choices, Jobs, choices, and dungeon routes.
 
 ## Demo Combat Triangle
 
@@ -65,17 +96,35 @@ Target first complete playthrough: roughly **60–120 minutes**, with replay val
 
 Tests active defense, positioning, protection, stagger, and melee timing.
 
+Prototype Development Grid directions:
+
+- Bulwark
+- Vanguard
+- Oathkeeper
+
 ### Arcanist — Channeling Staff & Arcane Focus
 
 **Position → place/shape Sigils → thread or control → build Attunement → convert setup into magical payoff.**
 
 Tests ranged aim, ground targeting, magical geometry, control, and status interaction.
 
+Prototype Development Grid directions:
+
+- Sigilcraft
+- Threading
+- Battle Focus
+
 ### Duelist — Twin Blades
 
 **Read opening → Slipstep/angle change → build Flow → create or exploit vulnerability → commit finisher → disengage before greed is punished.**
 
 Tests mobility, timing, Deflect, angle changes, opening creation, and offensive tempo.
+
+Prototype Development Grid directions:
+
+- Tempo
+- Predation
+- Reversal
 
 ## Demo Jobs
 
@@ -171,6 +220,7 @@ The demo should save at minimum:
 - Background
 - acquired Skills
 - chosen Discipline
+- Discipline Development Grid investment
 - Codex manifestations
 - equipment/mastery progress
 - known and active Jobs
@@ -203,9 +253,10 @@ New ideas can be recorded as backlog material, but implementation priority remai
 
 ## Repository map
 
-### Demo
+### Demo & Evaluation
 
 - [`docs/PLAYABLE_DEMO_SCOPE.md`](docs/PLAYABLE_DEMO_SCOPE.md) — frozen vertical-slice scope, milestones, content requirements, deferred systems, and success criteria.
+- [`docs/ISEKAI_GAME_QUALITY_CHECKLIST.md`](docs/ISEKAI_GAME_QUALITY_CHECKLIST.md) — quality checklist for fun, agency, discovery, progression, world reactivity, pacing, and isekai fantasy.
 
 ### Core Rules & Combat
 
@@ -219,6 +270,7 @@ New ideas can be recorded as backlog material, but implementation priority remai
 
 ### Character & Progression
 
+- [`docs/COHESIVE_PROGRESSION_ARCHITECTURE.md`](docs/COHESIVE_PROGRESSION_ARCHITECTURE.md)
 - [`docs/ORIGINS_SKILLS_SYSTEM_PERCEPTION.md`](docs/ORIGINS_SKILLS_SYSTEM_PERCEPTION.md)
 - [`docs/STARTING_ORIGINS_AND_OPENINGS.md`](docs/STARTING_ORIGINS_AND_OPENINGS.md)
 - [`docs/JOBS_MULTICLASS_AND_HIDDEN_PROGRESSION.md`](docs/JOBS_MULTICLASS_AND_HIDDEN_PROGRESSION.md)
@@ -251,11 +303,11 @@ New ideas can be recorded as backlog material, but implementation priority remai
 
 1. **Movement & Combat Sandbox** — third-person controller, one enemy, all three weapon packages, Weapon Arts, hit/defense authority.
 2. **Codex Combat** — five hand slots, draw/use/discard/cycle, Resolve/Attunement/Flow, Sigils, transformed-card flow.
-3. **Opening + Hearthcross** — Stranded prologue, first Skill, first manifestation, compact hub, Discipline and Job onboarding.
+3. **Opening + Hearthcross** — Stranded prologue, first Skill, first manifestation, compact hub, Discipline, small Development Grid, and Job onboarding.
 4. **Greyfen Field Slice** — route, goblin choice, persistent consequence, Job/Skill interactions.
 5. **Buried Gate** — route split, extraction checkpoint, encounters, Gatebound Hob, Gate revelation.
 6. **Persistence + Multiplayer Proof** — save/reload, host state, player state, host + one client.
-7. **Demo Polish** — onboarding, controller pass, VFX readability, audio, performance, bugs, replay hooks.
+7. **Demo Polish & Checklist Pass** — onboarding, controller pass, VFX readability, audio, performance, bugs, replay hooks, and evaluation against the isekai quality checklist.
 
 ## Power Curve
 
