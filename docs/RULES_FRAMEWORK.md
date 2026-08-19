@@ -1,349 +1,546 @@
 # Core Rules Framework
 
-Version: **v0.2.0**
+Version: **v0.2.20**
 
 ## 1. Game Structure
 
-### Core Rule
-The game alternates between two major states:
-
-1. **Town Phase** — persistent preparation, upgrades, character management, crafting, class training, equipment mastery, companion management, research, treasure configuration, and progression.
-2. **Dungeon Run** — a self-contained expedition where the player fights, explores, gains temporary upgrades, learns about the world, and attempts to reach an exit or defeat a boss.
+The game is a persistent 3D action-RPG/deckbuilder built around exploration, combat, discovery, town life, character development, and consequence.
 
 The macro loop is:
 
-**Town → Build Character/Party → Accept Contract or Choose Expedition → Enter Dungeon → Gain Temporary Power & Knowledge → Defeat/Retreat/Extract → Resolve Consequences & Rewards → Town**
+**Explore / Accept Opportunity → Prepare Character & Party → Travel / Enter Dangerous Space → Fight, Discover, Negotiate, Investigate, Loot → Secure / Retreat / Complete Objective → Resolve Consequences → Develop Character & World → Continue**
 
-## 2. Character Structure
+Hearthcross and later settlements are persistent places rather than abstract menu phases.
 
-A character contains:
+Dungeons are important expedition spaces, but the game is not limited to a strict Town → Dungeon → Town roguelite loop.
+
+---
+
+## 2. Player-Facing Progression Domains
+
+The game organizes its many systems into six player-facing domains:
+
+1. **Character** — Origin, Background, Attributes, Skills
+2. **Combat Build** — Weapon, Discipline, Development Grid, Divine Codex
+3. **Role** — Jobs
+4. **Gear** — Equipment, mastery, evolution
+5. **Discovery** — Knowledge, hidden qualifications, System Comprehension
+6. **World** — factions, relationships, settlement state, narrative consequences
+
+New mechanics should fit one of these domains whenever possible.
+
+See [`COHESIVE_PROGRESSION_ARCHITECTURE.md`](COHESIVE_PROGRESSION_ARCHITECTURE.md).
+
+---
+
+## 3. Character Structure
+
+A character may contain:
 
 - Origin
+- Background
 - Attributes
-- Health
-- Class loadout
-- Skill Mastery
-- Class Mastery
-- Deck
-- Equipment and Equipment Mastery
-- Treasures
-- Titles
-- Achievements
-- Guild Rank / certifications
-- Knowledge / Bestiary records
-- Companion relationships
-- Persistent unlocks
+- Health and combat resources
+- learned Skills
+- known and active Jobs
+- Primary and Secondary Disciplines where unlocked
+- Discipline Development Grid investment
+- equipped weapon set(s)
+- Weapon Arts
+- Divine Codex deck and current hand
+- equipment and equipment mastery/evolution
+- rare Treasures
+- selected Titles / recognitions
+- Knowledge records
+- System Comprehension
+- relationships and faction history
+- persistent unlocks
 
-### Prototype Default Attributes
+### Prototype Attributes
 
-- **Might** — physical power and heavy techniques
-- **Finesse** — precision, speed, ranged and agile techniques
-- **Mind** — arcane knowledge, calculation, spell shaping
-- **Spirit** — faith, willpower, summoning, supernatural resilience
+- **Might** — physical power, heavy techniques, force
+- **Finesse** — precision, agility, speed, ranged and dexterous techniques
+- **Mind** — arcane reasoning, spell shaping, analysis
+- **Spirit** — willpower, faith, supernatural resilience, soul-facing systems
 - **Vitality** — health, endurance, recovery
 
-Attributes should create build identity but should not overpower card synergy.
+Attributes should create direction without overpowering synergy, execution, equipment, or discovery.
 
-## 3. Class System
+---
 
-### Core Rule
-Classes are modular learned disciplines rather than permanent character identities.
+## 4. Real-Time Combat Architecture
 
-A class provides some combination of:
+Combat is **real-time third-person action combat**.
 
-- class mechanic
-- cards
-- passive traits
-- keyword access
-- equipment permissions
-- class-specific upgrade choices
-- mastery rewards
-- hybrid/multiclass interactions
+The three principal action layers are:
 
-A class should feel mechanically distinct because of what it teaches the character, not only because its cards share an aesthetic.
+### Foundation Actions
 
-### Prototype Default Class Loadout
+Reliable actions that do not depend on card draw:
 
-A character begins with:
+- move
+- camera / aim
+- sprint
+- dodge
+- traversal where appropriate
+- interact
+- target / lock handling
+- contextual universal actions
 
-- 1 **Primary Class**
-- 1 **Secondary Class**
+### Weapon Arts
 
-Later progression may unlock additional Secondary or Specialization slots.
+Reliable combat actions shaped by:
 
-### Multiclassing
+**Weapon Family + Discipline + Equipment Mastery = Weapon Moveset**
 
-A character may build a legal deck using cards available through all equipped classes plus any neutral/universal cards.
+Weapon Arts include attacks, guards, counters, movement attacks, setup actions, and other dependable techniques appropriate to the weapon and Discipline.
 
-Multiclassing should reward interaction rather than simple accumulation. Certain class combinations can unlock:
+### Codex Manifestations
 
-- Hybrid Cards
-- Cross-Class Passives
-- Hidden Classes
-- Combo Keywords
-- Alternate skill evolutions
-- Equipment evolution paths
+The Divine Codex supplies rotating extraordinary abilities through a five-slot active hand.
 
-## 4. Skills and Mastery
+Manifestations may include:
 
-### Core Rule
-Cards representing learned abilities may possess persistent **Skill Mastery**.
+- Techniques
+- Spells
+- Reactions
+- Stances
+- Summons
+- movement abilities
+- counters
+- transformations
+- buffs/debuffs
+- utility
+- miracles
+- advanced rule-manipulation effects
 
-Skill Mastery can be earned through meaningful use, training, achievements, class objectives, or hidden conditions.
+Cards should modify and expand the action combat already underway rather than cause the player to stop playing the action game.
 
-Mastery may unlock:
+See [`WEAPON_ARTS_COMBAT_LAYERS.md`](WEAPON_ARTS_COMBAT_LAYERS.md).
 
-- alternate upgrades
-- evolution branches
-- associated passives
-- Skill Family techniques
-- hidden progression conditions
+---
 
-See [`SKILL_MASTERY.md`](SKILL_MASTERY.md).
+## 5. Discipline System
 
-## 5. Equipment
+Disciplines are learned combat frameworks rather than permanent character identities.
 
-### Core Rule
-Equipment is an active progression layer, not merely a stat container.
+A Discipline can provide:
+
+- a combat mechanic or resource
+- access to manifestations
+- Weapon Art modifications
+- specialization branches
+- passive/behavioral rules
+- mastery recognition
+- multiclass bridges
+- hidden qualifications
+
+Prototype Disciplines:
+
+- Guardian
+- Arcanist
+- Duelist
+
+Prototype direction supports **Primary + Secondary Discipline** after multiclassing becomes available.
+
+Multiclassing should create integrated identities rather than simply enlarging the ability pool.
+
+---
+
+## 6. Discipline Development Grid
+
+Development Points are the main conventional point-spending progression currency.
+
+They are primarily used on compact Discipline Development Grids.
+
+A mature Discipline may contain roughly **20–35 meaningful nodes**, though the vertical slice should prototype far fewer.
+
+Node families include:
+
+- Connector Nodes
+- Behavior Nodes
+- Build Nodes
+- Keystone Nodes
+- Bridge Nodes
+- Hidden Nodes
+
+Most nodes should alter play or reinforce a strategy rather than only add percentages.
+
+Bridge Nodes can connect compatible Discipline branches after meaningful multiclass qualification.
+
+Hidden Nodes can be revealed by behavior, mastery, Jobs, equipment, narrative history, world state, or System Comprehension.
+
+---
+
+## 7. Skills
+
+Skills are broad persistent capabilities, not cards and not another giant passive tree.
+
+Examples include:
+
+- Swordsmanship
+- Appraisal
+- Tracking
+- Medicine
+- Smithing
+- Cooking
+- Mana Perception
+- Deception
+- Fieldcraft
+
+Skills improve primarily through meaningful use, training, study, teachers, discoveries, accomplishments, and hidden conditions.
+
+Different Skills may branch or evolve, but they should share a consistent mastery language.
+
+---
+
+## 8. Jobs
+
+Jobs represent roles or identities the world/system recognizes the character as fulfilling.
+
+Jobs are separate from combat Disciplines.
+
+Jobs may provide:
+
+- contextual effects
+- Job-related Skills
+- permissions
+- institutional or social recognition
+- evolution routes
+- hidden qualification access
+
+Jobs are rooted in places, cultures, institutions, activities, environments, and secrets.
+
+The rule is:
+
+**Locations create opportunities. Actions create qualifications. The Codex recognizes the result.**
+
+Characters may know multiple Jobs but benefit fully from only a limited number of Active Jobs at once.
+
+Jobs primarily progress through relevant activity rather than generic XP or large point trees.
+
+---
+
+## 9. Divine Codex and Deck Construction
+
+The character may know many manifestations while equipping a smaller combat deck.
+
+Current prototype direction:
+
+- combat deck target: roughly **15–25 manifestations**
+- active hand: **5 manifested slots**
+- keyboard can map slots to `1–5`
+- controller uses fast mapped access with optional radial support
+
+When a manifestation is used, it normally leaves the active slot and a replacement manifests according to deck-cycle rules.
+
+Deck cycling should be tested as a primary source of extraordinary-ability tempo, reducing reliance on traditional cooldown bars.
+
+The Codex is a build-construction system; it does not require a separate giant passive tree.
+
+---
+
+## 10. Card / Manifestation Zones
+
+The prototype should keep zones as simple as possible.
+
+Core zones:
+
+- **Deck** — manifestations waiting to enter the active hand
+- **Active Hand** — the five currently available manifestations
+- **Discard / Memory** — used manifestations waiting to circulate back
+- **Exhaust / Sealed** — manifestations temporarily inaccessible under explicit rules
+
+Additional zones should only be added when a mechanic genuinely requires them.
+
+---
+
+## 11. Manifestation Resolution
+
+A manifestation generally resolves through real-time gameplay:
+
+1. Player activates a hand slot.
+2. Targeting mode is established if required.
+3. Legality, cost, state, and interruption rules are checked.
+4. Animation / cast / movement commitment begins.
+5. Gameplay effects resolve at defined timing points.
+6. Reactions, statuses, damage, movement, summons, or world interactions resolve server-authoritatively.
+7. The manifestation moves to its destination state and the hand slot updates.
+
+Supported targeting families should remain standardized where possible:
+
+- Instant
+- Current Target
+- Aim / Projectile
+- Ground Target
+- Directional
+- Area Around Self
+- Channel
+- Contextual Reaction
+
+---
+
+## 12. Discipline Resources
+
+Prototype Disciplines currently use distinct combat resources or rhythm mechanics:
+
+- Guardian — **Resolve**
+- Arcanist — **Attunement**
+- Duelist — **Flow**
+
+These resources should reinforce each Discipline's playstyle rather than exist simply because every class needs a meter.
+
+Future Disciplines do not automatically require unique resources if their gameplay works without one.
+
+---
+
+## 13. Equipment
+
+Equipment is active progression, not only a stat container.
 
 Equipment may:
 
-- grant cards
-- unlock techniques
-- gain mastery
+- alter Weapon Arts
+- grant or modify manifestations
+- gain familiarity/mastery
 - gain or modify affixes
-- evolve after conditions are met
-- interact with Skill Mastery and classes
+- evolve through thematic conditions
+- interact with Skills, Jobs, Disciplines, and hidden progression
 
-See [`EQUIPMENT_PROGRESSION.md`](EQUIPMENT_PROGRESSION.md).
+Equipment progression should share a consistent player-facing mastery language rather than proliferating unrelated XP systems.
 
-## 6. Deck Construction
+---
 
-### Prototype Default
+## 14. Knowledge and System Comprehension
 
-- Minimum deck size: **15 cards**
-- Recommended range: **15–25 cards**
-- Maximum copies of one non-signature card: **2**
-- Signature/Legendary cards may use stricter limits.
+Knowledge records what the character has learned about the world.
 
-### Core Rule
-The character's **Known Card Pool** may be much larger than the equipped deck.
+System Comprehension controls how clearly deeper system information can be perceived.
 
-Progression should primarily expand options rather than forcing deck size inflation.
+Knowledge can reveal:
 
-## 7. Party and Companions
-
-### Core Rule
-The player character owns the primary deck. Persistent companions contribute smaller Support Decks or visible support actions.
-
-Companions are intended to add party dependence and tactical synergy without requiring the player to operate multiple full decks.
-
-### Prototype Default
-
-- 0–2 active companions
-- 4–8 Support Cards per companion
-
-Solo play remains a supported build path.
-
-See [`COMPANIONS.md`](COMPANIONS.md).
-
-## 8. Combat Loop
-
-Combat is turn-based.
-
-### Prototype Default Player Turn
-
-1. Start of Turn triggers resolve.
-2. Restore turn resources.
-3. Draw to hand size.
-4. Companion/support availability updates.
-5. Player may play cards while able to pay costs.
-6. End Turn effects resolve.
-7. Enemy intent resolves.
-8. Enemy End effects resolve.
-9. Begin next player turn.
-
-### Prototype Default Values
-
-- Starting hand: **5 cards**
-- Draw per turn: **5 cards** or refill to hand size, pending testing
-- Primary turn resource: **3 Action**
-- Maximum hand size: **10 cards**
-
-When the draw pile is empty, shuffle the discard pile to create a new draw pile unless a rule prevents it.
-
-## 9. Card Zones
-
-The standard card zones are:
-
-- **Deck** — cards waiting to be drawn
-- **Hand** — currently playable cards
-- **Discard** — used cards awaiting reshuffle
-- **Exhaust** — cards removed for the current combat
-- **Prepared** — cards intentionally held outside normal hand cycling
-- **In Play** — persistent cards such as Stances, Summons, or ongoing effects
-- **Sealed** — temporarily inaccessible cards
-
-Not every class must interact with every zone.
-
-## 10. Card Resolution
-
-Unless a card states otherwise:
-
-1. Declare card.
-2. Choose legal targets.
-3. Pay costs.
-4. Trigger `On Play` effects.
-5. Resolve card text from top to bottom.
-6. Resolve reactions created by that effect.
-7. Move the card to its destination zone.
-
-If part of a card cannot resolve, resolve as much as legally possible unless the card states that all conditions are required.
-
-## 11. Enemy Intent and Knowledge
-
-### Core Rule
-Enemies should generally communicate intended actions before they occur.
-
-Intent may reveal:
-
-- target
-- expected damage
-- status application
-- defense
-- charging/channeling
-- summon
-- special mechanic
-
-The **amount and precision of information** may improve through Bestiary Knowledge.
-
-Higher-depth enemies may obscure, distort, or alter intent through explicit dungeon rules rather than arbitrary hidden information.
-
-See [`KNOWLEDGE_AND_DEFEAT.md`](KNOWLEDGE_AND_DEFEAT.md).
-
-## 12. Encounter Outcomes
-
-A combat ends when:
-
-- all hostile enemies are defeated,
-- an alternate encounter objective is completed,
-- the party successfully escapes,
-- or the player character is defeated.
-
-Combat rewards may include:
-
-- currency
-- temporary cards
-- card upgrades
-- consumables
-- equipment
-- Skill Mastery
-- Class Mastery
-- materials
-- knowledge
-- treasure chances
-- dungeon-specific resources
-
-## 13. Guild and Contracts
-
-The Adventurer Guild provides structured world progression through contracts, certifications, reputation, and rank.
-
-Guild Rank is separate from Character Level and primarily unlocks opportunities rather than raw stats.
-
-See [`GUILD_AND_RANK.md`](GUILD_AND_RANK.md).
-
-## 14. Run Structure
-
-A dungeon run is made of connected rooms or nodes.
-
-Common room categories:
-
-- Combat
-- Elite
-- Boss
-- Event
-- Treasure
-- Merchant
-- Rest Site
-- Shrine
-- Puzzle
-- Hazard
-- Class Event
-- Anomaly
-
-A player should frequently choose between safer routes and higher-value danger.
-
-Contracts can layer additional objectives onto a dungeon run.
-
-## 15. Temporary vs Persistent Progression
-
-### Temporary Run Progression
-Usually resets when the run ends:
-
-- temporary cards
-- temporary card upgrades
-- temporary blessings
-- run currencies
-- temporary consumables
-- temporary stat bonuses
-- dungeon-specific effects
-
-### Persistent Progression
-Usually survives runs:
-
-- known cards
-- Skill Mastery
-- Class Mastery
-- unlocked classes
-- equipment and Equipment Mastery
-- Treasures
-- achievements
-- titles
-- Guild Rank and certifications
-- companion progression
-- Bestiary/world knowledge
-- town upgrades
+- creature behavior
+- weaknesses/resistances
+- materials and loot
+- faction information
+- dungeon structures
 - recipes
-- account/world unlocks
-- maximum dungeon depth
+- anomaly patterns
 
-## 16. Defeat, Retreat, and Extraction
+System Comprehension can reveal:
 
-### Core Rule
-A failed run should matter, but failure should not erase a developed character.
+- more exact status information
+- hidden qualification feedback
+- compatibility tags
+- hidden Development Grid structures
+- Dungeon Law wording
+- deeper Codex metadata
+- Authority signatures
 
-Normal defeat may cause:
+These belong to one broader player-facing **Discovery** domain.
 
-- loss of unsecured dungeon rewards
+---
+
+## 15. Hidden Progression
+
+The game tracks meaningful patterns in player behavior and history.
+
+Hidden qualifications may reference:
+
+- repeated behavior
+- mastery
+- narrative decisions
+- faction relationships
+- world state
+- equipment use/evolution
+- failures and recovery
+- system combinations
+- deliberate refusals or negative conditions
+
+Hidden progression may reveal:
+
+- Skills
+- Jobs
+- Discipline branches
+- Grid Nodes
+- Hybrid Manifestations
+- equipment evolutions
+- Titles
+- Treasures
+- narrative states
+- eventually Authorities
+
+Hidden content should be surprising but interpretable in hindsight.
+
+---
+
+## 16. Achievements, Titles and Treasures
+
+### Achievements
+
+Primarily records of accomplishment and discovery hooks. They are not a central stat ladder.
+
+### Titles
+
+In-world recognitions that may affect presentation, social reactions, events, or hidden qualifications. Only selected Titles should have mechanical effects.
+
+### Treasures
+
+Rare, limited, major rewards.
+
+**Equipment primarily modifies the character. Treasures may modify rules.**
+
+Treasures should remain uncommon enough to feel exceptional.
+
+---
+
+## 17. Exploration, Contracts and World Interaction
+
+The player can pursue:
+
+- contracts
+- faction requests
+- personal opportunities
+- exploration
+- dungeon expeditions
+- crafting/training
+- social relationships
+- trade
+- investigation
+- hidden content
+
+Quests should not be the only source of meaningful play.
+
+Jobs, Skills, relationships, Knowledge, and world state should create alternate interactions and outcomes where appropriate.
+
+---
+
+## 18. Dungeons and Dangerous Spaces
+
+Dungeons support:
+
+- combat
+- route choice
+- hazards
+- discoveries
+- hidden interactions
+- extraction / securing decisions
+- anomalous rules
+- dungeon-specific enemies
+- bosses
+- Story Revelations
+
+Scaling should emphasize new combinations, behaviors, rules, and Dungeon Laws rather than pure HP inflation.
+
+Dungeons should increasingly feel like places governed by discoverable logic.
+
+---
+
+## 19. Temporary vs Persistent Progression
+
+Persistent character growth is the main progression fantasy.
+
+Temporary expedition effects may exist, such as:
+
+- consumables
+- temporary blessings
+- anomaly effects
+- situational modifications
+- unsecured loot
+
+But the player should not rebuild an entire temporary character during every expedition.
+
+Persistent systems include:
+
+- Skills
+- Discipline investment
+- known manifestations
+- Jobs
+- equipment/mastery/evolution
+- Knowledge
+- System Comprehension
+- relationships
+- faction/world state
+- settlement development
+- rare Treasures
+
+---
+
+## 20. Defeat, Retreat and Extraction
+
+Failure should matter without deleting a developed character.
+
+Consequences may include:
+
+- loss of unsecured rewards
 - Wounds
 - equipment damage
-- companion Injuries
-- contract or reputation consequences
+- companion injuries
+- contract outcomes
+- faction consequences
+- world-state changes
 
 Knowledge, major permanent unlocks, and previously secured progression normally survive.
 
-Loot may be **Secured** or **Unsecured**, creating a push-your-luck decision between extraction and deeper exploration.
+Retreat should sometimes be a valid strategic decision.
 
-See [`KNOWLEDGE_AND_DEFEAT.md`](KNOWLEDGE_AND_DEFEAT.md).
+---
 
-## 17. Rules Priority
+## 21. Multiplayer
 
-When rules conflict, use this hierarchy:
+Target: **1–6 player online co-op**.
 
-1. Explicit card or encounter text
-2. Dungeon Law
-3. Character/Class/Equipment/Treasure passive
-4. Keyword rule
-5. Core rules
+Core architecture:
 
-Specific rules override general rules.
+- server-authoritative gameplay
+- host-owned world state
+- player-owned character progression
+- visiting players participate in the host timeline
+- host departure ends the initial listen-server session rather than attempting full host migration
 
-If two simultaneous effects conflict at the same priority, the active player chooses the order unless a card or encounter explicitly defines priority.
+Combat, VFX, targeting, and encounter design must remain readable with multiple players.
 
-## 18. Golden Design Rules
+---
+
+## 22. Advanced Rule Manipulation
+
+Covenants / Clauses, Compound Manifestations, Domains / Local Laws, and similar ideas are advanced **Codex Manifestation families**, not new base progression systems.
+
+Authorities sit above ordinary manifestations and represent rare direct permissions over deeper world laws.
+
+Authorities should remain endgame and narratively exceptional.
+
+---
+
+## 23. Rule Priority
+
+When explicit game rules conflict, use this general hierarchy:
+
+1. Authority or explicitly superior world-law override
+2. Explicit encounter / Dungeon Law
+3. Explicit manifestation / equipment / Treasure effect
+4. Character, Discipline, Job, Skill, or world-state passive
+5. Keyword rule
+6. Core rule
+
+Specific rules override general rules unless a higher-order rule explicitly prevents that override.
+
+Networking authority and anti-cheat validation remain technical requirements independent of fictional rule priority.
+
+---
+
+## 24. Golden Design Rules
 
 **Build a character, not just a deck.**
 
+**The deck defines capability; the player controls execution.**
+
+**Weapons determine how you fight. Cards determine what extraordinary options you can manifest while fighting.**
+
+**Locations create opportunities. Actions create qualifications. The Codex recognizes the result.**
+
 **Levels expand capability. Mastery deepens identity. Knowledge reveals possibilities. Synergies create power.**
 
-The player should begin by surviving the world's rules and eventually become powerful because they understand how to combine, exploit, and transcend them.
+**Visible progression tells the player what they can pursue. Hidden progression rewards the person they accidentally became.**
+
+**Do not add a new major system until the vertical slice demonstrates that the existing systems are fun together.**
